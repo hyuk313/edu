@@ -1,0 +1,2148 @@
+<html>
+  <!--
+    html, head, body : TAG
+    head : browser의 제목, 아이콘, seo를 담당 
+            SEO란,search를 의미함
+    body : image, 동영상, text를 출력하는 공간
+    title : browser tab의 제목을 출력하는 tag
+  -->
+  <head>
+    <title>html 1일차 교육1</title>
+    <meta charset="utf-8" />
+    <!--utf-16,32는 보안이 좋음-->
+    <!--/는 있어도 되고 없어도 됨
+      끝에서 닫지 않아도 되는 tag : 언어set, seo 데이터값을 설정하는 tag
+      meta tag
+      utf-8 : 공용어
+      euc-kr : 한국어 전용
+      euc-jp : 일본어 전용
+    -->
+  </head>
+  <body>
+    <h1>초급연습<br />입니다요</h1>
+    <!--엔터 기능 tag : br break의 약자-->
+    <h2>초급연습입니다요</h2>
+    <h3>초급연습입니다요</h3>
+    <h4>초급연습입니다요</h4>
+    <h5>초급연습입니다요</h5>
+    <h6>초급연습입니다요</h6>
+  </body>
+</html>
+<html>
+  <head>
+    <title>html 1일차 교육2</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <!--
+        <br /> 엔터치는 것.break의 약자
+        <b></b> bolding
+        <u></u> Underline
+        <i></i> italic font
+        <font> font tag. 글자font에 효과를 주는 tag. 하위tag
+        color 속성 : 색깔 변경
+        size 속성 : 크기 변경 (기본setting 값은 '3')(max값은 '7')(범위 '1'~'7')
+        <a href=""></a> : URL link tag. 상위tag(키보드로 작동하는 tag)
+        href : hyper tag. 이동할 페이지 또는 도메인 주소
+        상위tag, 하위tag
+    -->
+    홍길동님께서 <br />로그인 하셨습니다.<br />
+    적립금은 <b>2,000원</b>입니다.<br /><br />
+    이벤트 <u>쿠폰받기</u><br /><br />
+    회원등급 : <i>SILVER</i><br />
+    장바구니 : 총 <font color="blue" size="6">5</font>개의 상품<br /><br />
+    <a href="http://naver.com">고객지원센터</a>
+    <!--
+        <a></a> : URL link tag
+        href : hyper tag. 이동할 페이지 또는 도메인 주소
+    -->
+  </body>
+</html>
+<html>
+  <!--
+        a tag는 상위tag, font tag는 하위tag
+        상위tag 안에 하위tag가 있어야지만 작동이 된다
+    -->
+  <head>
+    <title>html 1일차 기본응용</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    [
+    <a href="http://news.heraldcorp.com">
+      <u><font color="green">헤럴드경제</font></u>
+    </a>
+    ]
+    <b><font size="3">2023</font></b>
+    년도
+    <u>상반기 경제시장</u> 현황
+  </body>
+</html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>html 1일차 이미지가져오기</title>
+    <!--
+        이미지 화일의 종류 : jpg, jpeg, png, bmp, gif, webp(mobile), svg(icon)
+                        webp, svg는 속도가 매우 빠르고 해상도가 좋음 (explorer미작동)
+        동영상 화일의 종류 : avi, mp4, mov, mpeg, webm(mobile)
+                        webm 최근 사용되는 종류
+        img tag : 이미지를 불러올 때 사용함
+        src 속성 : 이미지를 불러오는 경로 source의 약자
+            절대경로 - http:// 혹은 https:// 다른 페이지의 것을 끌고 오는 경우
+            상대경로 - 자기 서버에서 사용되는 이미지
+            ./폴더명/폴더명/이미지화일이름
+        width : 가로크기
+        height : 세로크기
+        web page의 크기 단위 : px (pixel)
+        *pixel
+            FHD 1920*1024 - 기본적으로 많이 사용됨
+            QHD FHD*2
+            UHD FHD*3
+            4K  FHD*4
+            8K  FHD*8
+            16K FHD*16
+        *Bobile Pixel
+            320(width) - 최초 아이폰3
+            340(width) ~ 560 (세로화면기준)
+            561(width) ~ 720 (가로화면기준)
+        *tablet Pixel (NOTEBOOK포함)
+            800(width) ~ 1920
+    -->
+  </head>
+  <body>
+    <img src="./testimage.jpeg" width="130" height="100" /><br />
+    <img src="testimage.jpeg" /><br />
+    <img
+      src="https://letsenhance.io/static/334225cab5be263aad8e3894809594ce/75c5a/MainAfter.jpg"
+      width="150"
+      height="100"
+    /><br /><br />
+    <img src="./image/testimage.jpeg" />
+  </body>
+</html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>html 1일차 table활용</title>
+  </head>
+  <body>
+    <!--
+        table tag : 테이블을 생성할때 사용하는 '상위' 태그
+            tr tag : 태이블의 행을 표시할 때 사용 (table row)
+            td tag : 테이블의 열(칸)을 표시할 때 사용
+        border 속성 : table의 외곽선을 표시
+        table 생성할 때 : 행, 칸(열) 수가 맞게 만들어야 하고, 그 후 병합등의 절차진행
+        tabe tag 하위에는 tr tag만 사용 가능, tr tag 하위에는 td tag만 사용가능
+    -->
+    <table border="1">
+      <tr>
+        <td>123</td>
+        <td>456</td>
+      </tr>
+      <tr>
+        <td>789</td>
+        <td>012</td>
+      </tr>
+    </table>
+    <br />
+    <table border="1" width="100" height="100">
+      <!--table 모두에 적용하는 경우-->
+      <tr>
+        <!--
+            width="150"는 tr tag에는 사용 못함
+            height는 사용이 가능함
+        -->
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <!--
+        <td width="100">1</td>
+        <td width="80" height="80">2</td>
+        <td width="60">3</td>
+        <td width="40">4</td>  각각으로 사용할 수는 없음
+        -->
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+    </table>
+    <br />
+    <table border="1" width="600">
+      <!--
+            colspan : 가로 칸을 병합할 때
+            rowspan : 세로 칸을 병합할 때
+        -->
+      <tr>
+        <td colspan="2">a</td>
+        <!--<td>b</td>-->
+        <td>c</td>
+        <td>d</td>
+        <td>e</td>
+        <!--<td rowspan="3"><img src="testimage.jpeg" width="100" /></td>-->
+        <td rowspan="3" width="50">f</td>
+      </tr>
+      <tr>
+        <td width="50">g</td>
+        <td colspan="4" width="350">h</td>
+        <!--<td>i</td>-->
+        <!--<td>j</td>-->
+        <!--<td>k</td>-->
+        <!--<td rowspan="2">l</td>-->
+      </tr>
+      <tr>
+        <td>m</td>
+        <td>n</td>
+        <td>o</td>
+        <td>p</td>
+        <td>q</td>
+        <!--<td>r</td>-->
+      </tr>
+    </table>
+  </body>
+</html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>html 1일차-table응용</title>
+  </head>
+  <body>
+    <table border="1" height="160" style align="center">
+      <tr>
+        <td width="100" colspan="3" style align="center">
+          <b><font color="red">관리자페이지</font></b>
+        </td>
+        <!--<td width="250">2</td>-->
+        <!--<td width="150">3</td>-->
+      </tr>
+      <tr>
+        <td width="100" style align="center">아이디</td>
+        <td width="250"></td>
+        <td width="150" rowspan="2" style align="center">로그인</td>
+      </tr>
+      <tr>
+        <td style align="center">패스워드</td>
+        <td></td>
+        <!--<td>9</td>-->
+      </tr>
+      <tr>
+        <td colspan="3" style align="center">아이디/비밀번호 찾기</td>
+        <!--<td>11</td>-->
+        <!--<td>12</td>-->
+      </tr>
+    </table>
+  </body>
+</html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>html 2일차-table2</title>
+  </head>
+  <body>
+    <!--
+        cellspacing : 바깥쪽 여백
+        cellpadding : 안쪽 여백
+        align : 텍스트, 이미지 등을 가로 정렬 (left, center, right)
+        table tag 'align' : 표 자체를 가운데로 이동시킴. body 기준으로 정렬이 되고
+                            그 외에 tr, 0td는 텍스트, 이미지, 버튼 만 정렬이 됨
+        valign : 세로 정렬 (top, middle, bottom) 텍스트, 이미지, 버튼 세로정렬
+
+    -->
+    <table
+      border="1"
+      width="400"
+      height="90"
+      align="center"
+      cellspacing="0"
+      cellpadding="0"
+    >
+      <tr height="30" bgcolor="yellow" align="center">
+        <td align="left" width="100">1</td>
+        <td align="center" width="100">2</td>
+        <td align="right" width="200">3</td>
+      </tr>
+      <tr height="30">
+        <td align="center">4</td>
+        <td align="center">5</td>
+        <td rowspan="2" align="center" valign="top">2023년도</td>
+      </tr>
+      <tr height="30">
+        <td align="center">7</td>
+        <td align="center">8</td>
+        <!--<td stlye align="center">9</td>-->
+      </tr>
+    </table>
+  </body>
+</html>
+<!--
+    W3C : 웹 표준화 작업
+    web표준 : 모든 deivce에 동일한 크기, 폰트, 이미지가 적용되는 것을 말함
+                *device-핸드폰, 컴퓨터, 노트북, 테블릿 등
+-->
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>html 2일차-table고급</title>
+  </head>
+  <body>
+    <!--
+        html5.0에서 추가된 table tag
+            <thead> : 테이블 컨텐츠 그룹
+            <th> : table head 독립적으로 사용되는 요소. 딱한번만!
+            <tbody> : 테이블에 데이터를 출력시키는 공간
+            <tfoot> : 총금액, 평균값 등 출력할때 사용하는 tag
+        *caption 읽어볼것
+    -->
+    <table border="1" cellspacing="0" cellpadding="0" width="800">
+      <caption>
+        [표의 제목]
+      </caption>
+      <thead bgcolor="blue">
+        <font color="yellow">
+          <tr>
+            <th width="100">번호</th>
+            <th width="500">제목</th>
+            <th width="100">글쓴이</th>
+            <th width="100">등록일</th>
+          </tr>
+        </font>
+      </thead>
+      <tbody align="center" bgcolor="gray">
+        <tr>
+          <td>1</td>
+          <td align="left">시스템안정화작업이 진행됩니다</td>
+          <td>관리자</td>
+          <td>2023-1-10</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td align="left">시스템 불안합니다</td>
+          <td>관리자</td>
+          <td>2023-1-11</td>
+        </tr>
+      </tbody>
+      <tfoot align="center" bgcolor="pink">
+        <tr>
+          <td colspan="4">총 게시물은 2개 있습니다</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>html 2일차 목차tag</title>
+  </head>
+  <body>
+    <!--
+        ul, ol : 목록, 목차 tag (ul은 디스크 아이콘 출력, ol은 오름차순 아라비아숫자 출력)
+        li tag를 사용하여 목록의 리스트를 출력함
+    -->
+    <ul>
+      <li>
+        <a href="http://daum.net"><font color="orange">1</font></a>
+      </li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <ol>
+      <li>A</li>
+      <li>B</li>
+      <li>C</li>
+    </ol>
+  </body>
+</html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>html 2일차 외부페이지연동</title>
+  </head>
+  <body>
+    <!--
+        iframe tag : 외부 페이지를 해당 페이지에다가 로드하여 출력하는 tag
+        frameborder : 외곽선을 설정할 때 사용하는 속성
+    -->
+    <iframe
+      src="./index6.html"
+      width="800"
+      height="200"
+      frameborder="0"
+    ></iframe>
+    <iframe src="./index8.html" width="800" height="200"></iframe>
+  </body>
+</html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>html 2일차 사용자입력UI</title>
+    <!--
+        GUI : 그래픽 사용자 도구
+        CUI : 커멘드 사용자 도구(CMD)
+        UI  : 사용자 도구 (user interface)
+        AUI : 전자음, 신호음으로 도구틀을 이용하는 사용자도구 (audio UI)
+
+        input tag : 사용자가 값을 입력, 선택할때 사용
+            text : 문자값 입력(값을 보여줌)
+            password : 문자값 등 입력(값을 안 보여줌)  보안성 강화
+            checkbox : 여러 개의 선택자 중 1개 이상 선택해야 하는 경우
+            radio : 여러 개의 선택자 중에서 only 1개만 선택하는 경우
+            button : 사용자가 입력한 값을 back end(프로그래머)에게 전달
+        select tag : 리스트 목록을 출력, 선택하게 함
+            option은 반드시 select와 함께 사용
+        textarea tag : 많은 양의 텍스트를 입력할 때 사용
+            cols : 한줄에 입력가능한 문자갯수(byte)
+            rows : 한번에 보여주는 줄 갯수(줄수)
+    -->
+  </head>
+  <body>
+    <input type="text" /><br /><br />
+    <input type="password" /><br /><br />
+    <input type="checkbox" />I agree<br /><br />
+    <input type="radio" />really?<br /><br />
+    <input type="button" value="search" /><br /><br /><br />
+    <select>
+      <option>통신사</option>
+      <option>SK</option>
+      <option>KT</option>
+      <option>LG</option>
+      <option>알뜰</option></select
+    ><br /><br />
+    <textarea cols="10" rows="5"></textarea>
+  </body>
+</html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>html 2일차 사용자입력ui 응용1 키보드</title>
+  </head>
+  <!--
+    maxlength 속성 : 최대입력 글자 수 지정 (키보드로 입력된 사항)
+    textarea tag에서는 절대 html 태그코드를 사용하지 않음(단, 세팅이 되어있을 경우 가능)
+    readonly 속성 : 읽기 전용 id, 휴대폰번호 등(사용자가 수정 불가)
+  -->
+  <body>
+    인증번호 6자리 입력하세요 : <input type="text" maxlength="6" /><br />
+    결재 비밀번호를 입력하세요 :
+    <input type="password" maxlength="4" /><br /><br />
+    <textarea maxlength="10" cols="100" rows="5"></textarea><br /><br />
+    <textarea cols="100" rows="5" readonly>
+         [이용약관]
+        본사이트는 좋습니다
+
+        부칙.2023년 1월부터 시행
+    </textarea>
+  </body>
+</html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>html 2일차 사용자입력ui 응용2 마우스</title>
+  </head>
+  <body>
+    <!--
+        input, select, textarea의 공통속성 : 
+            id(JavaScript), name(Back-end 데이타전송), class(css로 해당tag 디자인꾸미기)
+            id : JavaScript에서 많이 사용. label 이용할때 사용
+            name : 프로그래머에게 데이터를 전달할 때 사용. 특정tag외 중복이름 사용불가
+            label : input type 중에서 checkbox, radio에 한해서 컨트롤 가능. 단, id와 for 이름이 동일해야 함
+            checked : 초기화면에서 미리 체크가 적용
+    -->
+    <input type="checkbox" name="idcheck">아이디 저장<br/><br/>
+    <input type="checkbox" id="a"><label for="a">아이디 저장</label><br/><br/>
+    <input type="checkbox" id="b" checked><label for="a" >아이디 저장</label><br/><br/>
+    <input type="radio" name="agree" id="aa"><label for="aa">동의함1</label>
+    <input type="radio" name="agree" id="bb" checked><label for="bb">동의하지 않음1</label><br/>
+    <img src="./product/apple.jpg" width="100"/>
+  </body>
+  </html>
+  <html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>html 3일차-form과 submit,reset</title>
+    </head>
+    <body>
+        <!--
+            button 속성 : java script를 무조건 사용해야만 적용되는 속성
+            submit 속성 : form 안에 무조건 적용해야만 사용되는 속성(form밖에서는 미작동)
+            reset 속성 :  form 안에 있는 내용을 초기화 하는 속성
+
+            button, submit, reset : value값은 버튼의 이름을 출력할때 사용
+
+            form tag : 사용자가 입력한 값을 back-end에게 전달하는 기능
+            action 속성 : 해당입력된 값을 어디로 전달할 것인지 규정해 줌
+            method 속성 : 전송하는 방식을 일컬음
+                            post 암호화하여 전송
+                            get  URL에 해당 정보를 적용항 보내는 방식
+
+            URL : http://도메인/화일명.html
+            URI : ?로 시작하여 해당 name 값을 이용하여 데이터를 전송하는 기술
+                    [pattern] ? ~ & ~ & ~ 
+        -->
+        <!--<form action="http://nate.com" method="post">-->
+        <form action="./index13.html" method="get">
+        아이디 : <input type="text" name="mid"><br/><br/><br/>
+        비밀번호 : <input type="text" name="mpass"><br/><br/><br/>
+        <input type="submit" value="로그인"><br/><br/><br/>
+        <input type="reset" value="초기화">
+        <!--<input type="button" value="자바스크립트">-->
+    </form>
+
+    </body>
+</html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>html 3일차-naver검색응용</title>
+    </head>
+    <body>
+    <form action="https://search.naver.com/search.naver" method="get">
+    <font color="blue">검색어 : </font><input type="text" name="query" ><br/><br/>
+        <input type="submit" value="검색">
+    </form><br/><br/><br/>
+    
+    <form action="https://search.daum.net/nate" method="get">
+    <font color="red">네이트 검색어 : </font><input type="text" name="q"><br/><br/>
+    <input type="submit" value="네이트검색">
+    </form>
+    </body>
+
+    <form action="https://search.daum.net/search" method="get">
+        <font color="yellow">다음 검색어 : </font><input type="text" name="q"><br/><br/>
+        <input type="submit" value="네이트검색">
+        </form>
+        </body>
+</html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>html 3일차-레이아웃(CSS겸)</title>
+    </head>
+    <body>
+        <!--
+            div tag : 레이아웃 또는 오브젝트를 생성할 때 적용되는 tag
+                      단, style 속성을 무조건 사용하여 적용해야만 작동
+            style 속성 : CSS1.0 버전에서 나오는 속성 값
+            * 각각의 옵션별로 콜론, 세미콜론을 이용해야 함
+
+            width : 가로크기  height : 세로크기
+            background-color : 배경색상
+            border-radius : 모서리 둥글리기  LT>RT>RB>LB 순서로 둥글리게 됨. 4개가 같은 경우 하나만 표시
+        -->
+        <div style="width: 100px; height: 100px; background-color: aquamarine;">
+        </div><br/>
+        <div style="width: 600px; height: 40px; background-color: black;">
+        </div><br/>
+        <div style="width: 100px; height: 70px; background-color: orange; text-align: center;">
+            아이콘출력
+        </div><br/>
+        <div style="width:50px; height:50px; background-color: green; border-radius: 50px;">
+        </div><br/>
+        <div style="width: 400px; height:40px; background-color: gray; border-radius: 40px;">
+        </div><br/>
+        <div style="width:100px; height:100px; background-color: yellow; border-radius: 100px 100px 100px 0;">
+        </div><br/>
+        <div style="height:100px; width:100px; background-color: red; border-radius: 100px 100px 0 0;">
+        </div><br/>
+        <div style="background-color:purple; width:100px;height: 100px; border-radius: 50px 0 50px 0;">
+        </div><br/>
+        <div style="width:100px; height:100px; background-color: darkblue; border-radius: 100px 0 100px 100px;">
+        </div><br/>
+        <div style="width:100px; height:100px; background-color: rosybrown; border-radius: 50px 0 50px 50px;">
+        </div><br/>
+        <div style="width:100px; height:100px; background-color: darkblue; border-radius: 20px 0 20px 20px;">
+        </div><br/>
+    </body>
+</html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>html 3일차-레이아웃2(CSS겸)</title>
+    </head>
+    <body>
+        <!--
+            span : div와 동일하게 사용되는 레이아웃 tag
+            display:block : 화면에 출력
+            display:none : 화면에 미출력
+            label 의 또다른 특성 : span 처럼 object 형태로 사용이 가능
+        -->
+        <span style="width:100px; height:100px; background-color: blue; display:block ;">
+        </span><br/>
+        <div style="width:100px; height:100px; background-color: orange; ;">
+        </div><br/>
+        <span style="width:100px; height:100px; background-color: blue; border-radius: 0 50px 50px 0 ; display: block;">
+        </span><br/>
+        <span style="width:500px; height:40px; background-color: black; border-radius: 10px 0 10px 0; display: block;">
+        </span><br/>
+        <label style="width:100px; height:30px; background-color: purple; display: block; border-radius: 30px;">
+
+        </label>
+    </body>
+</html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>html 3일차 input+css</title>
+    </head>
+    <body>
+        아이디 : <input type="text" style="width:200px; height: 50px;"><br/><br/>
+        <input type="button" value="중복체크" style="width:100px; height: 40px;"><br/><br/>
+        <input type="checkbox" style="width:50px; height:50px;"> 동의함 <br/>
+        <input type="radio" style="width:30px; height:30px;"> 신용카드<br/><br/>
+        <select style="width:150px; height:30px;">
+            <option>이메일선택</option>
+            <option>nate.com</option>
+            <option>naver.com</option>
+            <option>직접입력</option>
+        </select><br/><br/>
+        <textarea style="width:400px;height:200px;"></textarea><br/><br/>
+        <!--실무에서 사용하는 형태로 꾸며보기-->
+        <input type="text" style="width:170px; height:30px; background-color: skyblue; color:blue">
+    </body>
+</html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>html 3일차-input+css+form응용</title>
+    </head>
+    <body>
+        <!--
+            placeholder : 사용자가 입력하는 사항에 대한 예시문구를 출력해 줌
+        -->
+        <form action="http://lovertv.dothome.co.kr/loginok.php" method="post">
+        아 이 디 <input type="text"  name="mid" style="width:200px; height:40px; background-color: white; color:black;" placeholder="아이디를 입력하세요"><br/><br/>
+        패스워드 <input type="password" name="mpass"  style="width:200px; height:40px; background-color: white; color:black;" placeholder="패스워드를 입력하세요"><br/><br/>
+        사원번호 <input type="text" name="company_no" style="width:200px; height:40px; background-color: white; color:black;" placeholder="사원번호를 입력하세요"><br/><br/>
+        <input type="submit" value="로그인" style="width:200px; height:40px; background-color: yellowgreen; color:white;"><br/><br/>
+        </form>
+    </body>
+</html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>html 3일차-css2.0</title>
+    </head>
+    <!--
+        style tag로 class 또는 id를 이용하여 디자인을 적용할 수 있음
+        style tag 안의 주석은 상이함. /* ~ */
+    -->
+    <style>
+        /*
+            주석 모양이 html과는 다르다
+            .은 class 이름을 말하고
+            #은 id 이름을 말함
+            style tag 안에는 html tag를 사용할 수 없음
+        */
+        .box{
+            width: 100px; height: 100px;
+            background-color: blue;
+        }
+        #box{
+            width: 200px; height: 40px;
+            background-color: red;
+        }
+        .color1{
+            background-color: green;
+            border-radius: 50px;
+        }
+        #color1{
+            background-color: black;
+        }
+        .box2{
+            display: block;
+            background-color: gray;
+        }
+        body{   /*. 또는 #을 이용하지 않는 style의 경우 해당 tag를 그래도 적용함 */
+            margin: 0;  /*바깥쪽 여백 (html은 cellspacing)*/
+            padding: 0; /*안쪽 여백 (html은 cellpadding)*/
+        }
+        label{
+            display: block;
+            width: 500px;
+            height: 40px;
+            background-color: purple;
+        }
+    </style>
+    <body>
+        <div class="box">
+        </div><br/>
+        <div id="box">            
+        </div><br/>
+        <div class="box color1"> <!--순서대로 적용됨-->
+        </div><br/>
+        <div id="box"> <!-- id는 한가지만 가능하기 때문에 color1"이 안된다-->
+        </div><br/>
+        <span class="box2 box color1"></span>
+        <label>1</label><br/>
+        <label>2</label>
+    </body>
+</html>
+body{
+    margin: 0; padding: 0;
+}
+.in1{
+    width: 150px;
+    height: 50px;
+    background-color: yellow;
+}
+.btn{
+    width: 150px;
+    height: 50px;
+    background-color: aqua;
+}
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <!--
+            meta viewport 속성은 모바일화면과 연동되어서 사용되는 속성
+            content는 여러 접속 device 중 해당크기에 맞춰 적용되도록 하는 속성
+            initial-scale=1.0은 zoom이 1:1 모드임
+        -->
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <title>html 3일차-css2.0 화일이용 및 모바일기본</title>
+        <!--
+            link tag : css화일을 로드할 때 사용. 그외 아이콘 출력, seo에 대한 도메인 경로 표시할때도 사용
+        -->
+        <link rel="stylesheet" type="text/css" href="./index20.css">
+    </head>
+    <body>
+        아이디 : <input type="text" class="in1"><br/><br/>
+            <input type="button" value="로그인" class="btn">
+    </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 4일차-메뉴만들기</title>
+    <link rel="stylesheet" type="text/css" href="./index22.css?v=2">
+    <!-- ?v=01.... 캐쉬에 잡고 있으면 변경이 되지 않으므로, 이게 필요함. 작업한 버전 -->
+</head>
+<body>
+    <!-- 
+        슬라이드메뉴 : 가로로 메뉴 배치
+        드롭메뉴 : 세로로 메뉴 배치
+     -->
+    <ul class="ul_1 ">
+        <li class="li_1">1</li>
+        <li class="li_1">2</li>
+        <li class="li_1">3</li>
+        <li class="li_1">4</li>
+        <li class="li_1">5</li>
+        <li class="li_1">6</li>
+    </ul><br/>      <br/><br/>
+    
+    <!--
+        오브젝트 안에 한줄짜리 텍스트를 가운데로 정렬하는 방식
+    -->
+    <div class="box">
+        광고이미지
+        문의:어디로?
+        이메일
+    </div>
+    <!--
+        오브젝트 안에 두줄이상 텍스트를 가운데로 정렬하는 방식
+    -->
+    <div class="box2">
+        광고이미지<br/>
+        문의:어디로?<br/>
+        이메일
+    </div>
+    <div class="s1">
+        <div class="s2"></div>
+    </div>
+    
+    <!--응용-->
+    <div class="s3">
+        <div class="s4"></div>
+    </div>
+
+</body>
+</html>
+body{
+    margin: 1;
+    padding: 1;
+}
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: orange;
+    text-align: center;  /*text-align : left center right */
+    line-height: 300px; /*한줄인 경우만 사용. 줄간격을 의미함*/
+
+}
+.box2{
+    width: 300px;
+    height: 200px;
+    background-color: pink;
+    text-align: center;  /*text-align : left center right */
+    /*padding: 100px 100px 100px 100px;  (top right bottom left) 모든 숫자가 동일한 경우 한개만 표기
+            padding 사용시 width, height에 대한 수치를 조정해야 함*/
+    padding: 100px 0 0 0; /* (top right bottom left)*/
+
+}
+.s1{
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    padding: 450px 0 0 450px;
+}
+.s2{
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+}
+.s3{
+    width: 50px;
+    height: 225px;
+    background-color: blue;
+    padding: 175px 0 0 350px;
+}
+.s4{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+.ui_1{
+    /* width: 112px; */
+    /* height: 252px; */
+    width: 612px;
+    height: 42px;
+    list-style: none; /*ul, ol 에서 사용하는 아이콘을 삭제*/
+    margin: 0;  /*해당목록 아이콘을 삭제할 때 해당 공간은 남아있으므로 pargin padding을 이용해 여백을 제거*/
+    padding: 0;
+    /* border : 외곽선. width, color, style 3개의 속성 적용 */
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    /*border: 1px solid black;   위의 3개 행을 한방에 사용*/
+    text-align: center;
+    line-height: 40px;   
+}
+.li_1{
+    width: 100px;
+    height: 40px;
+    background-color: beige;
+        
+    list-style: none;
+    border: 1px solid black;
+    float: left;    /* float : left, center, right 로 정렬 */
+    text-align: center;
+    line-height: 40px;
+
+    /* display: table-cell; line-height 안 쓰는 경우 table-cell로 해야 함*/
+    /* vertical-align: middle; */
+    /* text-align: center; */
+}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 4일차-오브젝트정렬방식+border사용법</title>
+    <link rel="stylesheet" type="text/css" href="./index23.css?v=1">
+</head>
+<body>
+    <div class="box1"></div><br/><br/>
+    <div class="box2"></div><br/><br/>
+    <div class="box3"></div><br/><br/>
+    <div class="box4"></div><br/><br/>
+    <input type="text" class="in_1" placeholder="맞을까나요"><br/><br/><br/>
+    <input type="text" class="in_2" placeholder="맞을까"><br/><br/>
+    <input type="button" class="btn" value="로그인"><br/><br/>
+    <span class="sbox_1"></span>
+    <span class="sbox_2"></span>
+    <span class="sbox_3"></span><br/><br/><br/><br/><br/><br/>
+
+    <!-- 응용파트1 -->
+    <span class="cat1"> <img src="./image/cat/cat1.jpg" width="100" height="100"></span>
+    <span class="cat1"> <img src="./image/cat/cat2.jpg" width="100" height="100"></span><br/><br/><br/><br/><br/>
+    <span class="cat2"> <img src="./image/cat/cat3.jpg" width="100" height="100"></span>
+    <span class="cat2"> <img src="./image/cat/cat4.jpg" width="100" height="100"></span><br/><br/><br/><br/><br/><br/>
+
+    <!-- 응용파트2 -->
+    <ol class="olcss">
+        <li class="licss" class="img"><img src="./image/cat/cat1.jpg" ></li>
+        <li class="licss" class="img"><img src="./image/cat/cat2.jpg" ></li>
+        <li class="licss" class="img"><img src="./image/cat/cat3.jpg" ></li>
+        <li class="licss" class="img"><img src="./image/cat/cat4.jpg" ></li>
+    </ol>
+</body>
+</html>
+body{
+    margin: 5px;
+    padding: 5px;
+}
+.box1{
+    width: 100px;
+    height: 40px;
+    border: 1px solid red; /*실선*/
+}
+.box2{
+    width: 100px;
+    height: 40px;
+    border: 1px dashed blue; /*절취선*/
+}
+.box3{
+    width: 100px;
+    height: 40px;
+    border: 1px dotted green; /*점선*/
+}
+.box4{
+    width: 100px;
+    height: 40px;
+    border: 5px double yellow; /*이중선*/
+}
+.in_1{
+    width: 300px;
+    height: 40px;
+    border: 0; /* input에는 디폴트로 border가 적용되어 있음. 해당사항을 적용, 외곽선 모양 및 색상 변경가능
+                  border-top, border-left, border-right, border-bottom*/
+    border-bottom: 1px solid blue;
+
+}
+.in_2{
+    width: 200px;
+    height: 50px;
+    border: 1px solid green;
+}
+.btn{
+    width: 200px;
+    height: 50px;
+    background-color: green;
+    color: white;
+    border: 0;
+    cursor: pointer; /* 마우스포인트 모양을 손모양으로 변경. 교재 참조  */
+    
+}
+
+/*
+    오브젝트를 정렬할 때 float:left,  floadt:right 로 설정, 적용. 단, 혼용 금지
+*/
+.sbox_1{
+    width: 200px;
+    height: 100px;
+    background-color: black;
+    display: block;
+    opacity: 0.5; /*투명도*/
+    float: left;
+}
+.sbox_2{
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+    display: block;
+    float: left;
+}
+.sbox_3{
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    display: block;
+    float: left;
+}
+.cat1{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    display: block;
+    float: left;
+}
+.cat2{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    display: block;
+    float: left;
+}
+.cat3{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    display: block;
+    float: left; 
+}
+.img{
+    width: 100px;
+    height: 100px;
+}
+.olcss{
+    width: 800;
+    height: 200;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.licss{
+    width: 100px;
+    height: 100px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 5일차 margin padding+position</title>
+    <link rel="stylesheet" href="./index24.css?v=1" type="text/css">
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>    
+    <div class="box3"></div>    
+    +++++
+    <span class="sbox1"></span>
+    <span class="sbox2"></span>
+    <span class="sbox3"></span>
+</body>
+</html>
+body{
+    margin: 0; padding: 0;
+}
+
+.box1{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    /* margin: 0 0 0 400px; */
+    /* margin-left: 400px; */
+    /* margin: top 100px; */
+}
+    /* margin: 바깥쪽 여백을 조절하는 속성
+            margin-top, margin-right, margin-bottom, margin-left
+            margin, padding은 마이너스값이 적용이 된다
+    */
+.box2{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    /* margin: 100px 0 0 400px; */
+}
+
+.box3{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    /* margin: 100px 0 0 400px; */
+}
+
+.sbox1{
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    display: block;
+    /* margin: 100px 0 0 400px; */
+}
+
+.sbox2{
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    display: block;
+    /* margin: 100px 0 0 400px; */
+}
+
+.sbox3{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    display: block;
+    /* margin: 100px 0 0 400px; */
+}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 5일차 margin padding+position2</title>
+    <link rel="stylesheet" href="./index25.css?v=1" type="text/css">
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+body{
+    margin 0px; padding: 0px;
+}
+
+.box1{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: static;    /* margin 이외에는 사용이 어렵다 */
+    top: 200px;
+}
+/* 
+    position은  오브젝트의 성격을 변화시킬때 사용함
+        생략할 경우, static
+        static : 자신의 영역이 있음. margin 만 사용가능
+        relative : 자신의 영역도 있고, 자유롭게 이동도 가능함. margin, top류 속성 사용가능
+        absolute : 자신의 영역이 없음. 완전 자유롭게 움직임. margni, top류 모두 사용가능
+*/
+.box2{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: relative;   /* margin(밑에가 같이 이동), top, left(별도로 움직임) 등 사용가능 */
+    /* margin-top: 100px; */
+    top: 300px;
+}
+.box3{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    position: absolute;  /* 자기영역이 없음.즉, 다른거 영향 없이 자기만 움직임 */
+    margin-top: 100px;
+}
+.box4{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    /* position: absolute;   */
+    /* margin-top: 100px; */
+}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index26.css?v=1" type="text/css">
+    <title>html 5일차-배너만들기</title>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div><br/><br/><br/><br/><br/>
+
+    <div class="bbox1">
+        <span class="sbox1"></span>
+    </div>
+    <div class="bbox2">
+        <span class="sbox2"></span>
+    </div><br/><br/><br/><br/>
+
+    <div class="banner">
+        <span class="bleft"></span>
+        <span class="bright"></span>
+    </div>
+</body>
+</html>
+body{
+    margin: 0px;   padding: 0px;
+}
+.box1{
+    width: 50px;
+    height: 50px;
+    background-color: purple;
+    position: relative;
+    /* right: 0px; relative에서 right,bottom 둘다 사용이 어려움*/
+    /* left: 600px; */
+    left: 100%; /*% 단위는 body 기준을 말하는 것임 */
+    margin-left: -50px;
+}
+.box2{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    right: 0px;
+}
+.box3{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+}
+.bbox1{
+    width: 500px;
+    height: 500px;
+    background-color: blue;
+    position: static;
+}
+.sbox1{
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    display: block;
+    position: relative;
+    /* left: 200px; */
+    left: 100%;
+    margin-left: -50px;
+}
+.bbox2{
+    width: 700px;
+    height: 500px;
+    background-color: purple;
+    position: relative;
+}
+.sbox2{
+    width: 50px;
+    height: 50px;
+    background-color: yellowgreen;
+    display: block;
+    position: absolute;
+    /* right: 0px; */
+    /* left: 102%; */
+    /* top:10%; */
+
+    right: 0;
+    bottom: 0;
+}
+.banner{
+    width: 1000px;
+    height: 500px;
+    background-color: black;
+    position: relative;
+}
+.bleft{
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+}
+.bright{
+    width: 50px;
+    height: 50px;
+    background-color: yellowgreen;
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    left: 100%;
+    margin-left: -50px;
+}
+/* 
+    1.부모 position: static / 자식 position: static, relative
+    2.부모 position: relative / 자식 position: relative, absolute
+    3.부모 position: absolute / 자식 position: relative, absolute
+    4.부모 posotion: static => 자식태크를 움직이지 않을 경우(자식position도 static)
+    *relative는 bottom, right가 안 먹는다
+*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index27.css?v=1" type="text/css">
+    <title>html5일차-탑메뉴응용</title>
+</head>
+<body>
+    <span class="topmenu">
+        <ol class="olcss">
+            <li class="menu1">home</li>
+            <li class="p1">|</li>
+            <li class="menu1">입점신청</li>
+        </ol>
+        <ul class="ulcss">
+            <li class="menu1">로그인</li>
+            <li class="p1">|</li>
+            <li class="menu1">회원가입</li>
+            <li class="p1">|</li>
+            <li class="menu1">장바구니</li>
+            <li class="p1">|</li>
+            <li class="menu1">고객센터</li>
+        </ul>
+    </span>
+</body>
+</html>
+body{
+    margin: 0 0 0 0;   padding: 0px;
+}
+.topmenu{
+    width: 1000px;
+    height: 30px;
+    background-color: gray;
+    margin: 0  auto; /* browser를 기준으로 가운데 정렬*/
+    display: block;
+    position: relative;
+}
+.olcss{
+    height: 30px;
+    width: 165px;
+    font-size: 12px;
+    background-color: red;
+    line-height: 30px;
+    opacity: 0.9;
+    list-style: none;
+    margin: 0 ; padding: 0 ;  /* 자체 여백을 갖고 있으므로 없애야 함  */
+    position: absolute;
+    left: 0%;
+    top: 0;
+    text-align: center;
+}
+.ulcss{
+    height: 30px;
+    width: 335px;
+    font-size: 12px;
+    line-height: 30px;
+    background-color: blue;
+    opacity: 0.9;
+    list-style: none;
+    margin: 0 ; padding: 0 ;/* 자체 여백을 갖고 있으므로 없애야 함  */
+    position: absolute;
+    right: 0%;
+    text-align: center;
+}
+.menu1{
+    height: 30px;
+    width: 80px;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.menu1:hover{ /* 마우스가 오버되었을 경우*/
+    color: white;
+}
+.p1{
+    height: 30px;
+    width: 5px;
+    line-height: 30px;
+    float: left;
+    text-align: center;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 메인전체파일로드(응용)</title>
+    <link rel="stylesheet" type="text/css" href="./index.css?v=2">
+    <link rel="stylesheet" type="text/css" href="./login.css?v=1">
+</head>
+<body>
+    <header class="top">
+    <!-- 최상단메뉴 -->
+        <?php include "./top.html" ?>
+    </header>
+    <nav class="menu">메뉴</nav><!--메뉴-->
+        <?php include "./menu.html" ?>
+    <main>
+        <section class="login">
+            <?php include "./login.html" ?>
+        </section>
+    </main>
+    <footer class="copy">
+        <?php include "./footer.html" ?>
+
+    </footer><!--카피라이터-->
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<meta charset="UTF-8">
+<div class="login_div">
+    회원로그인정보
+</div>
+<meta charset="UTF-8">
+<div class="menu_css">메뉴출력부분</div>
+    <meta charset="UTF-8">
+    <div>
+        <span class="span_css">
+            <ol class="ol_css">
+                <li class="li_css"><a href="./member_login.html"></a>로그인</li>
+                <li class="li_css">회원가입</li>
+                <li class="li_css">고객센터</li>
+            </ol>
+        </span>
+    </div>    
+ <meta charset="UTF-8">
+ <div class="prod">
+    상품출력파트
+ </div>
+ .login{
+    height: 500px;
+}
+.login_div{
+    width: 1100px;
+    height: 500px;
+    background-color: green;
+    margin: 0 auto;
+}
+<?xml version="1.0" encoding="utf-8"?>
+<food>
+    <strawberry>
+        <boy>홍길동</boy>
+        <age>32</age>
+        <blood>A형</blood>    
+    </strawberry>
+
+    <strawberry>
+        <boy>이순신</boy>
+        <age>45</age>
+        <blood>B형</blood>    
+    </strawberry>
+</food>
+<!DOCTYPE html> <!--html5.0 코드를 사용할 경우 넣어야한다-->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
+    <!-- 해당 웹페이지에 가장 적합한 호환성 모드를 표시 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 6일차-html5.0 기본태그</title>
+    <link rel="stylesheet" type="text/css" href="./middle1.css?v=1">
+    <base href="./image/cat/"> <!-- 이미지 소스가 동일한 폴더에 있을때 사용됨. 다른 디렉토리 에 있는것들은 못 가져옴-->
+</head>
+<body>
+    <!-- stike: html4.0, s:html5.0 취소선 태그. 즉 s를 사용하려면 !doctype html 이란 태그가 들어가야 함 -->
+    <strike>32,000</strike>원 <br/>
+    <s>45,000</s>원 <br/>  
+    
+    <!--
+            참고.태그의 유형 : 태그   마크업태그   시멘틱태그
+            태그란, <br> <input> 처럼 태그 하나로 작동하는 태그
+            마크업 태그 란, <ol> </ol> <div></div> <span></span> <label></label>열고, 닫히는 태그를 말함
+            시멘틱태그 란, <a href=""> </a>  <table></table> <head></head> <body></body> <select></select> 의미를 바로 알수 있는 태그
+    -->
+     
+     <!--
+        input 업그레이드 부문. datalist와 함께 사용, 검색키워드를 보다 빠르게 입력될수 있도록 추가됨. 단, list라는 속성과 함께 datalist id와 결합해야 함
+    -->
+     <input type="text" placeholder="검색어를 입력하세요" list="search">
+     <datalist id="search">
+        <option>html</option>
+        <option>css</option>
+        <option>jscript</option>
+     </datalist> <br/><br/><br/>
+
+     <!-- 
+        fieldset: 그룹 형태의 레이아웃을 생성할때 사용하는 태그
+        legend: 그룹명을 일컬음
+    -->
+     <fieldset>
+        <legend>사업자로그인</legend>
+        아 이 디: <input type="text"><br>
+        패스워드: <input type="password">
+     </fieldset><br><br><br>
+     
+     <!-- 목차리스트 태그의 업그레이드 버전. 타이틀의 제목이 있는 것이 특징. dl dt dd 로 구성됨  dl=ol,ul / dd=li-->
+     <dl>
+        <dt>오늘의 요리는?</dt>
+        <dd>탕슉</dd>
+        <dd>짜장</dd>
+        <dt>점심의 특선</dt>
+        <dd>탕짜</dd>
+        <dd>탕짬</dd>
+     </dl><br>
+
+     <!-- 
+        details : 세부정보를 표시할때 사용하는 태그.단독으로 사용불가
+        ol, ul 과 함께 사용
+        summaty : 세부정보에 대한 그룹명 표시
+      -->
+     <details>
+        <summary class="title">오늘의 추천메뉴</summary>
+     <ul class="food">
+        <li>콩나물국밥</li>
+        <li>볶음밥</li>
+        <li>김치찌게</li>
+     </ul>
+    </details><br><br><br><br>
+    <form method="post" action="http://naver.com">
+    <input type="text" placeholder="아이디를 입력하세요" required> <br><br><br>
+    <!-- required : 필수입력값에 대한 속성. 단, submit form을 함께 사용시 적용되는 속성값 -->
+    <input type="checkbox" required>동의함
+    <input type="submit" value="중복체크"><br><br><br>
+    </form>
+    <!-- 
+        별로 사용 안되는 태그들
+        <address>
+        <cite> : 음악, 영화, 예술 작품의 제목을 정의할때 사용하는 태그
+        <big> :글자크게 하는 태그
+        <em> : 글자지우기
+        <dfn> : 글자기울기
+     -->
+     <img src="cat1.jpg">
+     <p>타이틀의 제목을 출력하는 태그</p>
+</body>
+</html>
+body{
+    margin: 0; padding: 0;
+}
+.title{
+    width: 150px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: orange;
+    font-size: 12px;
+    line-height: 30px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.food{
+    list-style: none;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 6일차-레이아웃 태그</title>
+    <link rel="stylesheet" type="text/css" href="./middle2.css?v=1">
+</head>
+<body>
+    <div>
+        <span>
+            <label>
+                <ul>
+                    <li>
+                        <div></div>
+                    </li>
+                </ul>
+            </label>
+        </span>
+    </div>
+    <!-- 레이어팝업 -->
+    <figure class="pop"></figure>
+    <!-- header : 최상단 메뉴에 많이 사용됨(로그인, 회원가입, 고객센터...) 고정되는 부분-->
+    <header class="header_css">
+        <div class="top">메뉴 출력부분</div>
+    </header>
+    <!-- nav : 대메뉴, CI BI를 출력하는 파트. 고정되는 부분-->
+    <nav class="nav_css"></nav>
+    
+    <main class="main_css"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <!-- section, aside, figure 여러번 사용 가능 -->
+        
+        
+        <!-- 사이드메뉴(floarbanner) -->
+        <aside class="floorbanner"></aside>
+        <!-- 여러번 반복 사용하는 태그  -->
+        <section class="banner"></section>
+        <aside class="aside"></aside> <!--광고배너 같은것들-->
+        <section class="prod"></section>
+        <section class="board"></section> <!--공지사항, 이벤트 게시물 출력 등-->
+            <div class="avbanner">
+                <!-- 파트를 구분하여 사용할때 적용디는 레이아웃 태그. float left를 사용 -->
+                <article class="notice"></article>
+                <article class="event"></article>
+            </div>
+    </main><!--메인페이지, 서브페이지로 구분하는 태그. 단, 별도의 css를 적용하지 않음-->
+    
+    <footer class="copy"></footer>
+</body>
+</html>
+body{
+    margin: 0; padding: 0;
+}
+.header_css{
+    height: 30px;
+    background-color: gray;
+    border-bottom: 1px solid;
+}
+.top{
+    width: 1000px;
+    height: 30px;
+    background-color:  gray;
+    margin: 0 auto;
+}
+.nav_css{
+    height: 100px;
+    background-color: skyblue;
+}
+.main_css{
+    /* background-color: blueviolet; */
+    position: relative;
+}
+.copy{
+    height: 150px;
+    background-color: black;
+}
+.banner{
+    height: 150px;
+    background-color: black;
+}
+.product{
+    height:  150px;
+    background-color: red;
+}
+.aside{
+    height: 100px;
+    background-color: blue;
+}
+.avbanner{
+    height: 300px;
+    background-color: aqua;
+}
+.board{
+    height: 200px;
+    background-color: peru;
+}
+.notice{
+    width: 500px; height: 300px; background-color: yellow;
+}
+.event{
+    width: 500px; height: 300px; background-color: green;
+    float: left;
+}
+.pop{
+    position: absolute;
+    top: 100px; left: 500px;    background-color: gold;
+    z-index: 10;
+    width: 300px; height: 500px;
+}
+.floorbanner{
+    width: 50px; height: 200px; background-color: black;
+    position: absolute;
+    z-index: 5;
+    left:1500px;
+} 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 6일차-이미지화일출력css3 파트</title>
+    <link rel="stylesheet" type="text/css" href="./middle3.css?v=1">
+</head>
+<body>
+    <span class="icobtn"><img src="./icoimg/home.png" class="img"></span>
+    <span class="icobtn"><img src="./icoimg/key.png" class="img"></span>
+    <span class="icobtn"><img src="./icoimg/mail.png" class="img"></span>
+    <span class="icobtn"><img src="./icoimg/help.png" class="img"></span>
+    <span class="icobtn"><img src="./icoimg/settings.png" class="img"></span>  <br><br><br><br><br><br>
+    <div class="icobtn2 img2"></div>
+    <div class="icobtn2 img2 img1"></div>
+    <div class="icobtn2 img2 img2"></div>
+    <div class="icobtn2 img2 img3"></div>
+    <div class="icobtn2 img2 img4"></div>
+</body>
+</html>
+body{
+    margin: 0; padding: 0;
+}
+.icobtn{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: inline-block ;
+    /* css3.0 에서 display : inline-block 을 사용하면 block + margin 이 결합되어있는 태그 */
+    box-sizing: border-box;     /*box-sizing:border 1px 사용시에 꼭 적용해야 함. 미적용시, border 두께만큼 width, height가 커지게 됨  */
+    border-radius: 50px;
+    overflow: hidden;     /* 해당오브젝트보다 이미지 또는 동영상이 클 경우 나머지 부분은 출력되지 않도록 적용하는 속성 */
+    /* css2.0 
+        float: left;
+        margin-left: 5px; */
+     
+    /*css3.0 
+        display : inline-block  */
+}
+.img{
+    width: 50px;
+    height: 50px;
+}
+.icobtn2{
+    width: 96px;
+    height: 96px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+}
+.img2{
+    /* 이미지 화일이 한개일 경우 여러가지 아이콘으로 나누어져있을때 사용 */
+    background-image: url("./icoimg/menus.png");
+    /* background-image: x,y축으로 숫자가 나누어짐. 단, background-image 속성을 사용해야지만 적용될 수 있음 */
+}
+.img1{
+    background-position: -96px 0;
+}
+.img2{
+    background-position: -192px 0;
+}
+.img3{
+    background-position: -288px 0;
+}
+.img4{
+    background-position: -384px 0;
+}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 6일차-이미지 SVG화일사용범</title>
+    <link rel="stylesheet" type="text/css" href="./middle3.css?v=1">
+</head>
+<body>
+    <img src="./search.svg" style="width: 100px; height: 100px;">
+    <!-- 
+        ㄴsvg란, xml코드로 이루어진 이미지화일을 뜻합니다
+        장점: 이미지 크기와 상관없으며, 색상변경이 가능
+        svg 화일을 오픈하여 fill 속성을 통해서 색상변경이 가능
+     -->
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 6일차-node형태의 class적용</title>
+    <link rel="stylesheet" type="text/css" href="./midlle5.css?v=1">
+</head>
+<body>
+    <div class="divcss">
+        <span>박스1</span>
+        <label><em>박스2</em></label>
+        <div>박스3</div>
+    </div>
+    <ul class="ulcss">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+        <li>메뉴6</li>
+    </ul>
+    <!-- nth-of-type : 태그명이 다른 경우, 노드 번호를 새롭게 지정-->
+    <div class="div1">
+        <label>1메뉴</label>
+        <label>2메뉴</label>
+        <span>3메뉴</span>
+        <div>4메뉴</div>
+    </div>
+    <br><br><br>
+    <!-- nth-child :태그명과 관계없이 무조선 노드번호를 읽어서 적용. 단, 하위 속성이 div 인 것만-->
+    <div class="div2">
+        <label>1메뉴</label>
+        <label>2메뉴</label>
+        <span>3메뉴</span>
+        <div>4메뉴</div>
+    </div>    
+    <br><br><br>
+    <ol class="board">
+        <li>게시물1</li>
+        <li>게시물2</li>
+        <li>게시물3</li>
+        <li>게시물4</li>
+        <li>게시물5</li>
+        <li>게시물6</li>
+    </ol>
+</body>
+</html>
+body{
+    margin: 0; padding: 0;
+}
+.divcss{
+    width: 800px; height: 50px;
+    vertical-align: middle;
+    text-align: center;
+}
+.divcss > span{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    float: left;
+}
+.divcss > label{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    float: left;
+}
+.divcss >label> em{   /* .divcss 클래스 안에 있는  span 태그 안에 em 태그 아래의 내용을 적용 */
+    color: white;
+    font-style: normal;
+}
+.divcss > div{
+    width: 50px;
+    height: 50px;
+    background-color: red;   
+    float: left;
+}
+.ulcss{
+    width: 150px; height: auto;
+    list-style: none;
+}
+.ulcss > li{
+    width: 150px; height: 40px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+.ulcss > li:nth-of-type(4){      /* nth-of-type : node type handling(nth)    ( ) 안은 노드번호 */
+    color: red;
+}
+.ulcss > li:nth-of-type(6){
+    background-color: orange;
+}
+.div1{
+    width: 50px; height: auto;
+}
+.div1>div:nth-of-type(1){   /*속성명이 다른 경우, 다른 거를 기준으로 몇번째인지를 살펴야 함 */
+    color: red;
+}
+.div2{
+    width: 50px; height: auto;
+}
+.div2>div:nth-child(4){  /*태그가 같을 경우 사용하는게 합리적 */
+    color: blue;
+}
+.board{
+    width: 100px; height: auto;
+}
+.board>li:nth-child(odd){ /*odd : 홀수 노드  nth-of-type(odd) */
+    color: red;
+}
+.board>li:nth-child(even){ /*even : 짝수 노드 nth-of-type(even) */
+    color: blue;
+}
+<svg xmlns="http://www.w3.org/2000/svg" fill="gray" height="48" width="48"><path d="M39.8 41.95 26.65 28.8q-1.5 1.3-3.5 2.025-2 .725-4.25.725-5.4 0-9.15-3.75T6 18.75q0-5.3 3.75-9.05 3.75-3.75 9.1-3.75 5.3 0 9.025 3.75 3.725 3.75 3.725 9.05 0 2.15-.7 4.15-.7 2-2.1 3.75L42 39.75Zm-20.95-13.4q4.05 0 6.9-2.875Q28.6 22.8 28.6 18.75t-2.85-6.925Q22.9 8.95 18.85 8.95q-4.1 0-6.975 2.875T9 18.75q0 4.05 2.875 6.925t6.975 2.875Z"/></svg>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>이미지응용</title>
+  </head>
+  <body>
+    <a href="../index2.html"><img src="../testimage.jpeg" /></a>
+
+    <!--
+        ./ : 같은 위치에 있을 경우
+        ../ : 해당 위치의 상위 디렉토리에서 찾을 경우
+        ../../ : 해당 위치의 상위, 상위 디렉토리에서 찾을 경우
+    -->
+  </body>
+</html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일 회원정보 검색</title>
+    <link rel="stylesheet" type="text/css" href="./m1.css">
+</head>
+<body>
+    <form action="http://lovertv.dothome.co.kr/search_id.php" method="post">
+    <input type="text" class="m1"  name="user_name" placeholder="가입자 명을 입력하세요"><br/><br/>
+    <input type="text" class="m1"  name="user_tel" placeholder="휴대폰번호 '-' 를 빼고 입력하세요" maxlength="11"><br/><br/>
+    <input type="text" class="m1"  name="user_email" placeholder="이메일 주소를 입력하세요"><br/><br/>
+    <input type="submit" value="아이디 찾기" class="m2" ><br/><br/>
+    </form>
+    <!--
+        a tag 중에서 href 속성 중 tel 이라는 값이 적용하여 모바일에서 클릭시 휴대폰 연결 device로 전환됨
+    -->
+    <a href="tel:1588-9876">고객센터문의 : 1588-9876</a>
+</body>
+</html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 4일차 모바일태그</title>
+</head>
+<body>
+    <input type="text"><br/><br/>
+    <input type="number"><br/><br/> <!--숫자만 입력(M)-->
+    <input type="tel"><br/><br/> <!--전화번호만 입력(M)-->
+    <input type="color" ><br/><br/> <!--색상선택(P,M)-->
+    <input type="date"><br/><br/> <!--날짜 선택(P,M)-->
+    <input type="time"><br/><br/> <!--시간 선택(P,M)-->
+    <input type="datetime-local"><br/><br/> <!--날짜, 시간 선택(P,M)-->
+    <input type="week"><br/><br/> <!--주차 선택(P,M) IOS 인식잘안됨-->
+    <form oninput="aa.value=parseInt(a.value)">
+        min:1 <input type="range" min="1" max="10" id="a"> max:10<br/><br/>
+            <!--
+                range : 범위선택 속성 range-min-max)
+                form과 함께 사용, java script언어를 사용해야 정상작동. 그외 output tag로 출력
+                output tag : input에 사용되는 값을 출력, 기타 java script 결과값 출력
+                             form에 oninput 속성 이용)
+            -->
+        <output for="a" name="aa"></output> <!--name은 필수 속성값-->
+    </form>
+    <br/><br/>
+    <!--
+        button tag : 너무많은 input 속성이 나오면서 별도 구분되는 tag를 추가함
+    -->
+    <button type="button">회원가입</button><br/><br/>
+    <button type="submit">로그인</button>
+    <button>아이디중복체크</button> <!--type 속성 미입력시 기본은 submit-->
+</body>
+</html>
+<html lang="ko">
+<style>
+    .box{
+        width: 400px;
+        height: 300px;
+        /*border-radius: 10px;*/
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 4일차 동영상재생 태그</title>
+</head>
+<body>
+    <!--
+        video tag : 모든 device에서 사용이 가능한 동영상 플레이 tag
+        속성값 :
+            controls : 동영상 플레이 도구 tool 이 출력됨
+            autoplay : 자동 영상재생 (단, muted와 함께 사용해야 함)
+            muted : 음 소거
+            loop : 반복재생
+            poster : 썸네일 이미지
+            source : 동영상을 load하는 tag. type과 병행해서 사용.mp4-mp4, avi-avi 속성동일해야함
+        track tag : 자막을 출력시키는 tag. (***.vtt)
+        속성값
+            srclang : en, ko, jp, fn 등 언어 이름을 사용
+            label : 출력언어를 선택하는 값
+
+    -->
+    <!--<video controls autoplay muted loop class="box">-->
+    <video poster="../image/testimage.jpeg" controls class="box"
+        <source src="./mv.mp4" type="video/mp4">
+        <track kind="subtitles" src="./1.vtt" srclang="en" label="English">
+        <track kind="subtitles" src="" srclang="ko" label="Korea">
+        <!--vtt화일 : 자막전용 화일입니다 예.1.vtt-->
+    </video>    
+</body>
+</html>
+body{
+    margin: 10;
+    padding: 10;
+    /*background-color: blue;*/
+}
+.m1{
+    width: 320px;
+    height: 50px;
+}
+.m2{
+    width: 320px;
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무비인트로이벤트페이지</title>
+    <link rel="stylesheet" type="text/css" href="./index.css?v=1">
+</head>
+<body>
+    <!-- <img src="./cgv.png"> -->
+    <!-- 로고, 메뉴 위치는 비디오 위쪽에 위치a -->
+    <span class="menu">
+        <label class="logo">
+            <img class="img" src="./cgv.png">
+        </label>
+            
+        <label class="l_menu">
+            <ul class="li">
+                <li class="d_li">영화</li>
+                <li class="d_li">극장</li>
+                <li class="d_li">예매</li>
+                <li class="d_li">스토어</li>
+                <li class="d_li"><font color="red">이벤트</font></li>
+                <li class="d_li">혜택</li>
+            </ul>
+        </label>
+
+    </span>
+    <div class="event">
+        <!-- 
+            이벤트 참여 파트 부분
+         -->
+        <span class="event_info">
+            <div>
+                <img src="./avata_logo.png" class="logo_avt">
+                <ol class="event_ol">
+                    <li class="event_li"><input class="input" type="text" placeholder="이벤트참여자 이름을 입력하세요"></li>
+                    <li class="event_li"><input class="input" type="text" placeholder="이벤트참여자 이메일을 입력하세요"></li>
+                    <li class="event_li"><input class="input" type="text" placeholder='휴대폰번호를 "-"없이 입력하세요'></li>
+                    <li class="event_li"><input class="input" type="text" placeholder="티켓번호를 입력하세요"></li>
+                    <li class="event_li">
+                        <label class="label">
+                            <input type="checkbox" class="chkbx"> 정보 제공 및 이용에 동의해주세요</li>
+                        </label>
+                    <li class="event_li"><input type="submit" value="이벤트에 참여합니다" class="btn"></li>
+                </ol>
+            </div>
+        </span>
+        <video class="av" muted autoplay loop>
+            <source src="./avata.webm" type="video/webm" >
+        </video>
+    </div>
+</body>
+</html>
+body{
+    margin: 0; padding: 0;
+}
+span, label{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.event{
+    width: 1900px;
+    height: 1080px;
+    margin: 0 auto;
+    /* object-fit: cover; */
+    overflow: hidden;
+    /* overflow: hidden은 해당 크기 이상일 경우, 이미지, 텍스트, 동영상 등 범위 이상 부분을 출력하지 않음 */
+    background-color: black;
+    position: relative;
+}
+.av{
+    width: 100%;
+    position:absolute;
+    top: -140px;
+    
+    /* z-index: 1; */
+    /* height: 900px; */
+    /* height: 100vh; */ /*동영상크기가 고정되어버림*/
+    /* margin-top: -50px; */
+}
+.menu{
+    width: 1200px;
+    height: 100px;
+    /* background-color: red; */
+    /* display: block; */
+    margin-left: 0 auto;
+    margin:0 auto;
+    padding: 0;
+    float: left;
+}
+.logo{
+    width: 250px;
+    height: 100px;
+    /* background-color: yellow; */
+    float: left;
+    text-align: center;
+    position: relative;
+    /* line-height: 100px; */
+    box-sizing: border-box;
+    left: 20%;
+
+}
+.l_menu{
+    width: 950px;
+    height: 100px;
+    /* background-color: green;     */
+    font-size: 18px;
+    float: left;
+    /* list-style: none; */
+    position: relative;
+    right: 20%;
+}
+.li{
+    margin: 0; padding: 0;
+    width: calc(100px*6);
+    height: 100px;
+    position: relative;
+    text-align: center;
+    margin-left: 100%;
+    left: calc(100px*6);
+    list-style: none;
+    /* background-color: blueviolet; */
+    float: left;  
+    /* float: inline-end; */
+    /* line-height: 100px;   */
+    opacity: 0.5;
+}
+.d_li{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    float: left;
+}
+.img{
+    width: 120px;
+    height: 55px;
+    /* position: absolute; */
+    margin-top: 20px;
+}
+.event_info{
+    width: 1000px;
+    height: 700px; /* auto */
+    /* background-color: black; */
+    position: absolute;
+    top:  100px;
+    /* right: 50%; */
+    /* margin-right: 50%; */
+    left: 50%;
+    margin-left: -500px;
+    padding-left: 150px;
+    box-sizing: border-box;
+    z-index: 1;  /*z-index는 무조선 absolute에만 적용, 가장 위로 보여지도록 하는 속성*/
+    text-align: center;
+}
+.event_ol{
+    width: 700px;
+    height: auto;
+    /* background-color: yellow; */
+    text-align: center;
+}
+.event_li{
+    width: 700px;
+    height: 50px;
+    /* background-color: green; */
+    list-style: none;
+    text-align: center;
+    border: 1px dotted darkblue;
+    opacity: 0.5;
+}
+.logo_avt{
+    width: 700px;
+    margin: 0;
+    /* height: 250px; */
+    text-align: center;
+}
+.input{
+    width: 700px;
+    height: 50px;
+    font-size: 20px;
+    color: red;
+}
+.chkbx{
+    width: 25px;
+    height: 25px;
+    /* font-size: 50px; */
+    /* top: 50%; */
+    margin-top: 10px;
+    vertical-align: -5px
+}
+.label{
+    font-size: 20px;
+    color: white;
+    /* background-color: white; */
+}
+.btn{
+    width: 700px;
+    height: 50px;  
+    font-size: 20px;
+    background-color: gray; 
+    opacity: 0.5; 
+    color: white;
+}
