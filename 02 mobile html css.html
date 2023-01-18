@@ -1,0 +1,139 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일 회원정보 검색</title>
+    <link rel="stylesheet" type="text/css" href="./m1.css">
+</head>
+<body>
+    <form action="http://lovertv.dothome.co.kr/search_id.php" method="post">
+    <input type="text" class="m1"  name="user_name" placeholder="가입자 명을 입력하세요"><br/><br/>
+    <input type="text" class="m1"  name="user_tel" placeholder="휴대폰번호 '-' 를 빼고 입력하세요" maxlength="11"><br/><br/>
+    <input type="text" class="m1"  name="user_email" placeholder="이메일 주소를 입력하세요"><br/><br/>
+    <input type="submit" value="아이디 찾기" class="m2" ><br/><br/>
+    </form>
+    <!--
+        a tag 중에서 href 속성 중 tel 이라는 값이 적용하여 모바일에서 클릭시 휴대폰 연결 device로 전환됨
+    -->
+    <a href="tel:1588-9876">고객센터문의 : 1588-9876</a>
+</body>
+</html>
+
+body{
+    margin: 10;
+    padding: 10;
+    /*background-color: blue;*/
+}
+.m1{
+    width: 320px;
+    height: 50px;
+}
+.m2{
+    width: 320px;
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 4일차 모바일태그</title>
+</head>
+<body>
+    <input type="text"><br/><br/>
+    <input type="number"><br/><br/> <!--숫자만 입력(M)-->
+    <input type="tel"><br/><br/> <!--전화번호만 입력(M)-->
+    <input type="color" ><br/><br/> <!--색상선택(P,M)-->
+    <input type="date"><br/><br/> <!--날짜 선택(P,M)-->
+    <input type="time"><br/><br/> <!--시간 선택(P,M)-->
+    <input type="datetime-local"><br/><br/> <!--날짜, 시간 선택(P,M)-->
+    <input type="week"><br/><br/> <!--주차 선택(P,M) IOS 인식잘안됨-->
+    <form oninput="aa.value=parseInt(a.value)">
+        min:1 <input type="range" min="1" max="10" id="a"> max:10<br/><br/>
+            <!--
+                range : 범위선택 속성 range-min-max)
+                form과 함께 사용, java script언어를 사용해야 정상작동. 그외 output tag로 출력
+                output tag : input에 사용되는 값을 출력, 기타 java script 결과값 출력
+                             form에 oninput 속성 이용)
+            -->
+        <output for="a" name="aa"></output> <!--name은 필수 속성값-->
+    </form>
+    <br/><br/>
+    <!--
+        button tag : 너무많은 input 속성이 나오면서 별도 구분되는 tag를 추가함
+    -->
+    <button type="button">회원가입</button><br/><br/>
+    <button type="submit">로그인</button>
+    <button>아이디중복체크</button> <!--type 속성 미입력시 기본은 submit-->
+
+</body>
+</html>
+
+<html lang="ko">
+<style>
+    .box{
+        width: 400px;
+        height: 300px;
+        /*border-radius: 10px;*/
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 4일차 동영상재생 태그</title>
+</head>
+<body>
+    <!--
+        video tag : 모든 device에서 사용이 가능한 동영상 플레이 tag
+        속성값 :
+            controls : 동영상 플레이 도구 tool 이 출력됨
+            autoplay : 자동 영상재생 (단, muted와 함께 사용해야 함)
+            muted : 음 소거
+            loop : 반복재생
+            poster : 썸네일 이미지
+            source : 동영상을 load하는 tag. type과 병행해서 사용.mp4-mp4, avi-avi 속성동일해야함
+        track tag : 자막을 출력시키는 tag. (***.vtt)
+        속성값
+            srclang : en, ko, jp, fn 등 언어 이름을 사용
+            label : 출력언어를 선택하는 값
+
+    -->
+    <!--<video controls autoplay muted loop class="box">-->
+    <video poster="../image/testimage.jpeg" controls class="box"
+        <source src="./mv.mp4" type="video/mp4">
+        <track kind="subtitles" src="./1.vtt" srclang="en" label="English">
+        <track kind="subtitles" src="" srclang="ko" label="Korea">
+        <!--vtt화일 : 자막전용 화일입니다 예.1.vtt-->
+    </video>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html-file 사용법</title>
+</head>
+<body>
+    파일 업로드 : <br><input type="file"><br><br>
+    <!-- 위의 구문은 모든 것이 싹 다 업로드가 됨 -->
+    이미지파일 업로드 : <br><input type="file" accept="image/*"><br><br>
+    문서파일 업로드 : <br><input type="file" accept="text/plain"><br><br>
+    동영상파일 업로드 : <br><input type="file" accept="video/*"><br><br>
+    송장번호파일 업로드 : <br><input type="file" accept=".xls,.xlsx"><br><br>
+
+    파일첨부1 : <br><input type="file" accept="image/*" capture="camera"><br><br>
+    파일첨부2 : <br><input type="file" accept="video/*" capture="camcorder"><br><br>
+    파일첨부3 : <br><input type="file" accept="audio/*" capture="microphone"><br><br>
+    파일첨부4 : <br><input type="file" accept="image/*" capture="user"><br><br>
+    
+
+    [pc파일 첨부]
+    파일첨부 : <input type="file" multiple><br><br>
+</body>
+</html>
