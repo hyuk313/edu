@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 3일차(location 통신응용편)</title>  <!--back-end는 function을 method란 용어로 사용함-->
+    <!--파빌리온 적용-->
+    <link rel="shortcut icon" href="#">
+</head>
+<script>
+// 아이디 는 biz_id
+// 패스워드 는 biz_pw
+// 사업자번호 는 biz_no
+
+var data = window.location.search;  //biz_id + biz_pw + biz_no
+var split_1 = data.split("&biz_no=");   //사업자번호(biz_no)
+var biz_no = split_1[1];
+var split_2 = split_1[0].split("&biz_pw=");   //패스워드(biz_pw)
+var biz_pw = split_2[1];
+var split_3 = split_2[0].split("?biz_id=");   //패스워드(biz_pw)
+var biz_id = split_3[1];
+
+function check_data(){
+    if(data.value==""){
+        alert("정보를 입력하셔요");
+    }    
+    else{
+        if(biz_no=="2341256789"){
+            alert("해당 가입자는 이미 가입되셨습니다");
+        }
+        else{
+            if(isNaN(Number(biz_id.value))==true){
+                alert("사업자번호에 숫자만 입력하셔요");
+            }
+            else{
+                if(biz_id.value.length<10){
+                    alert("사업자번호는 모두 10자리입니다");
+                }
+                else{
+                    alert("정상 가입되었습니다")}
+            }
+        }
+    }
+}    
+
+console.log("원본데이타"+data);
+console.log("사업자id"+biz_id);
+console.log("비밀번호"+biz_pw);
+console.log("사업자등록번호"+biz_no);
+
+
+</script>
+<body>
+   입력된 결과를 확인해보실까요? 
+    <input type="button"     value="두둥"   onclick="check_data()">
+</body>
+</html>
