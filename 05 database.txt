@@ -437,3 +437,193 @@ mysql -u 사용자명 -p 데이터베이스명 < 복제위치\databackup.sql
 <<필드명(컬럼) 원하는 위치에 추가하는 방법 >>
  - alter table 테이블명 add 컬럼명 자료형 null(not null) after(before) 위치컬럼(필드명);
 
+<< timestamp >>
+ - 입력시간을 서버시간*과 동기화하는 sql 필드 속성
+   *서버시간- sql이 설치된 서버의 시간을 의미함
+ - select now();   윈도우 상의 시간(CMD에서). 윈도우가 sql이 설치된 서버!이기 때문
+ - 컬럼명 timestmap not null default current_timestamp
+ - 시간입력 적용방법 : insert into 테이블명 values (default);
+
+<<php 세팅>>
+$host = "localhost";
+$user = "hyuk313"; 
+$pwd = "jamesk138126*";
+$dbname = "hyuk313";
+$tables = "poll";
+$field1 = "rep_mail";
+
+<<테이블 members 만들기>>
+create table members(
+	midx int(8) not null auto_increment,
+	m_id char(50) not null,
+	m_name varchar(100) not null,
+	m_pass varchar(50) not null,
+	m_email varchar(100) not null,
+	m_intime timestamp not null default current_timestamp,
+	primary key(midx),
+	unique key(m_id)
+);
+
+<<point table>>
+create table point(
+	pidx bigint(12) not null auto_increment,
+	midx int(8) not null,
+	point_nm varchar(100) not null,
+	points int(5) not null,
+	primary key(pidx)
+);
+
+insert into members values ('0','kim','김옥동','a1234','kim@nate.com',default);
+insert into point values ('0','1','신규가입포인트','1000');
+insert into point values ('0','1','이벤트당첨포인트','3000');
+
+insert into members values ('0','jang','장보고','a1234','jang@nate.com',default);
+insert into point values ('0','2','신규가입포인트','900');
+
+
+
+<<inner join~on>> 테이블과 테이블 join하기
+ - 단, 두개 이상의 테이블을 join할 때, 공통적인 필드값이 있어야 함
+ - select * from 테이블1 as T1(별칭) inner join 테이블2 as T2(별칭) where(on) T1.필드명 = T2.필드명;
+ - select T1.필드명, T2.필드명 from 테이블1 as T1 inner join 테이블2 as T2 where T1.필드명 = T2.필드명;
+
+mysql> select * from members as a inner join point as b on(where) a.midx=b.midx;
++------+------+--------+--------+--------------+---------------------+------+------+----------------+--------+
+| midx | m_id | m_name | m_pass | m_email      | m_intime            | pidx | midx | point_nm       | points |
++------+------+--------+--------+--------------+---------------------+------+------+----------------+--------+
+|    1 | kim  | 김옥동 | a1234  | kim@nate.com | 2023-01-27 11:10:47 |    1 |    1 | 신규가입포인트 |   1000 |
++------+------+--------+--------+--------------+---------------------+------+------+----------------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from members as k1 inner join point as k2 where k1.midx=k2.midx and k1.m_id="kim" ;
++------+------+--------+--------+--------------+---------------------+------+------+------------------+--------+
+| midx | m_id | m_name | m_pass | m_email      | m_intime            | pidx | midx | point_nm         | points |
++------+------+--------+--------+--------------+---------------------+------+------+------------------+--------+
+|    1 | kim  | 김옥동 | a1234  | kim@nate.com | 2023-01-27 11:10:47 |    1 |    1 | 신규가입포인트   |   1000 |
+|    1 | kim  | 김옥동 | a1234  | kim@nate.com | 2023-01-27 11:10:47 |    3 |    1 | 이벤트당첨포인트 |   3000 |
++------+------+--------+--------+--------------+---------------------+------+------+------------------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select k1.m_id, k1.m_name, sum(k2.points) from members as k1 inner join point k2 where k1.midx=k2.midx and k1.m_id="kim" group by k1.m_id;
++------+--------+----------------+
+| m_id | m_name | sum(k2.points) |
++------+--------+----------------+
+| kim  | 김옥동 |           4000 |
++------+--------+----------------+
+1 row in set (0.00 sec)
+
+insert into members values ('0','Ryu','유관순','a1234','Ryu@nate.com',default);
+insert into members values ('0','Kang','강만수','a1234','Kang@nate.com',default);
+
+<<실습 20230127.금>>
+create table review (
+	ridx int(8) not null auto_increment,
+	r_id varchar(100) not null,
+	r_nm varchar(100) not null,
+	r_title varchar(100) not null,
+	r_text text not null,
+	r_imgpath text null,
+	r_indate timestamp not null default current_timestamp,
+	primary key(ridx)
+);
+
+<<ftp에서 업로드가능하도록 셋팅>>
+ - 디렉토리 만든 후 화일권한에서 숫자값 707 로 변경
+ - 707 : 최대숫자 7     최하숫자 0
+ - rwxr--x--x : 751
+
+   rwx      - rx        --x   :: 751
+   421      - 41        --1
+   생성자   사용그룹    클라이언트
+
+   rwx      ---         rwx   :: 707
+   421       0          421
+
+   r:4
+   w:2
+   x:1
+
+
+<<패스워드 변경>>
+ -  alter user 'hyuk'@'localhost' identified with mysql_native_password by 'b1234';
+
+<<mysql 가상의 사용자 password의 경우에만 사용>>
+ - root에서만 변경 가능
+use mysql;
+alter user '사용자아이디'@'localhost' identified with mysql_native_password by '변경할비밀번호';
+
+
+<<ajax 통신>>
+ - ajax : post, get 두가지 방식 존재
+ - ajax 통신 사용할 때 return값으로 결과를 보냄. 기존에 있는 members 테이블에 아이디 검토 후
+   yes값이면 사용가능한 아이디, no값이면 사용할 수 없는 아이디
+   idcheck.php
+ - ajax : java script용, jquery용($~)
+
+<<회원가입 테이블.건강보험>>
+create table health(
+	hidx int(6) not null auto_increment,
+	h_id varchar(50) not null,
+	h_pw text not null,
+	h_email varchar(100) not null,
+	h_tel varchar(11) not null,
+	h_area char(50) not null,
+	h_part varchar(100) not null,
+	h_age int(3) not null,
+	h_date timestamp not null default current_timestamp,
+	primary key(hidx),
+	unique key(h_id)
+);
+
+
+<<foreign key>>
+ - 테이블과 테이블을 연결하는 key
+ - f.key생성시 주의사항:절대 중복되지 않는 값으로 생성해야 함
+			f.key 생성 연결시 데이터를 입력하지 못함
+			본 테이블에 데이터에서 자동증가값 또는 중복되지 않는 값이 먼저 입력 후, f.key가 있는 테이블에 값을 적용할 수 있음
+			원 테이블 데이터 삭제시 f.key가 있는 테이블의 데이터를 먼저 삭제해야지만 삭제 가능
+ - foreign key(컬럼명) references 본테이블명(본테이블 필드명)
+   foreign key(userinfo_udix) references useinfo(udix)
+
+create table useinfo(
+	uidx int(8) not null auto_increment,
+	u_nm varchar(100) not null,
+	u_id varchar(50) not null,
+	primary key(uidx),
+	unique key(u_id)
+);
+
+create table user_dtc(
+	didx int(8) not null auto_increment,
+	d_price int(8) nit null,
+	userinfo_uidx(8) not null,
+	primary key(didx),
+	foreign key(userinfo_udix) references useinfo(udix)
+);
+
+
+desc tables ==>> f.key : MUL
+
+insert into userinfo values ('0','홍길동','hong')
+
+ select * from user_dtc
+
+insert into user_dtc values ('0','45000','1'); f.key의 경우 원테이블에 없는 값은 insert가 되지를 않는다
+(원본테이블을 자동으로 체크하고 inset하게 된다)
+
+delete from userinfo where uidx='1'; 작동되지 않음. 왜냐면 f.key가 있는 테이블이 존재하기 때문임
+(이럴 경우, f.key가 있는 테이블에서 먼저 삭제해야지 원본테이블을 삭제할 수가 있음)
+
+
+<<user 확인하기>>
+1.use mysql;
+2.select user, host from user;
+
+
+<<주소지 목록 가져오기>>
+ -파서 : 만들어진 배열값을 가져와서 배열화시켜버리는 행위
+ -파싱 : 데이터베이스를 배열식으로 가져오는 행위
+
+<<배열기호>>
+ []일반배열
+ {}키 배열
